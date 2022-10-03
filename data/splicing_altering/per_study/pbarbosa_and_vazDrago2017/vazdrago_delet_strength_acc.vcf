@@ -1,0 +1,143 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##contig=<ID=1>
+##contig=<ID=2>
+##contig=<ID=3>
+##contig=<ID=4>
+##contig=<ID=5>
+##contig=<ID=6>
+##contig=<ID=7>
+##contig=<ID=8>
+##contig=<ID=9>
+##contig=<ID=10>
+##contig=<ID=11>
+##contig=<ID=12>
+##contig=<ID=13>
+##contig=<ID=15>
+##contig=<ID=16>
+##contig=<ID=17>
+##contig=<ID=18>
+##contig=<ID=19>
+##contig=<ID=20>
+##contig=<ID=21>
+##contig=<ID=22>
+##contig=<ID=X>
+##FILTER=<ID=SQUIRLS,Description="Squirls considers the variant as pathogenic if the filter is present">
+##INFO=<ID=CAPICE,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/CAPICE/hg19/capice_v1.0_hg19_snvs.tsv.gz">
+##INFO=<ID=CAPICE_ind,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/CAPICE/hg19/capice_v1.0_hg19_indels.tsv.gz">
+##INFO=<ID=CDTS_percentile,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/CDTS/hg19/CDTS_hg19_N11257all.bed.gz">
+##INFO=<ID=CDTS_score,Number=1,Type=String,Description="calculated by self of overlapping values in column 4 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/CDTS/hg19/CDTS_hg19_N11257all.bed.gz">
+##INFO=<ID=CI-SpliceAI,Number=.,Type=String,Description="CI-SpliceAI V1.0 variant annotation for a maximum distance of 1000 nucleotides from the variant; masking off; remove nucs outside tx all effects. Format: ALLELE|SYMBOL|DS_AG|DS_AL|DS_DG|DS_DL|DP_AG|DP_AL|DP_DG|DP_DL (DS=Delta Score, DP=Delta Position, AG/AL=Acceptor Gain/Acceptor Loss, DG/DL=Donor Gain/Donor Loss).">
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|EXON|INTRON|HGVSc|HGVSp|cDNA_position|CDS_position|Protein_position|Amino_acids|Codons|Existing_variation|DISTANCE|STRAND|FLAGS|VARIANT_CLASS|SYMBOL_SOURCE|HGNC_ID|CANONICAL|MANE_SELECT|MANE_PLUS_CLINICAL|CCDS|SOURCE|SIFT|PolyPhen|DOMAINS|HGVS_OFFSET|HGVSg|AF|AFR_AF|AMR_AF|EAS_AF|EUR_AF|SAS_AF|gnomADe_AF|gnomADe_AFR_AF|gnomADe_AMR_AF|gnomADe_ASJ_AF|gnomADe_EAS_AF|gnomADe_FIN_AF|gnomADe_NFE_AF|gnomADe_OTH_AF|gnomADe_SAS_AF|MAX_AF|MAX_AF_POPS|CLIN_SIG|SOMATIC|PHENO|PUBMED|CHECK_REF|VAR_SYNONYMS|MOTIF_NAME|MOTIF_POS|HIGH_INF_POS|MOTIF_SCORE_CHANGE|TRANSCRIPTION_FACTORS|HGVS_IntronEndOffset|HGVS_IntronStartOffset|TSSDistance|ada_score|rf_score|ExACpLI|GeneSplicer|MaxEntScan_alt|MaxEntScan_diff|MaxEntScan_ref|SpliceRegion|NMD|Condel|MPC|FDR|MTR|MTR_centile|CADD_PHRED|CADD_RAW|CADDSplice_PHRED|CADDSplice_RAW|29way_logOdds|DANN_score|FATHMM_score|GERP++_RS|LINSIGHT|LRT_pred|LRT_score|M-CAP_score|MetaLR_pred|MetaLR_score|MetaSVM_pred|MetaSVM_score|MutPred_score|MutationAssessor_score|MutationTaster_score|PROVEAN_score|Polyphen2_HDIV_score|Polyphen2_HVAR_score|SIFT4G_score|SIFT_score|VEST4_score|fathmm-MKL_coding_score|integrated_fitCons_score|phastCons30way_mammalian|phyloP30way_mammalian|existing_InFrame_oORFs|existing_OutOfFrame_oORFs|existing_uORFs|five_prime_UTR_variant_annotation|five_prime_UTR_variant_consequence|GERP_vep|GERP_vep_all|phyloP_vep|phastCons_vep">
+##INFO=<ID=CardioBoost,Number=1,Type=String,Description="calculated by self of overlapping values in column 8 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/CardioBoost/hg19/CardioBoost_hg19.tsv.gz">
+##INFO=<ID=CardioVAI,Number=1,Type=String,Description="calculated by self of overlapping values in column 15 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/CardioVAI/hg19/cardioVAI_v0.1_hg19.tsv.gz">
+##INFO=<ID=ClinPred,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/ClinPred/hg19/ClinPred_hg19.tsv.gz">
+##INFO=<ID=ConSpliceML,Number=.,Type=String,Description="The ConSpliceML pathogenic splice-altering prediction. Format: Gene_Name|ConSpliceML_prediction (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/ConSpliceML/hg19/ConsSpliceML_SNVs_hg19.vcf.gz)">
+##INFO=<ID=DANN,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/DANN/DANN_hg19.txt.gz">
+##INFO=<ID=EVE,Number=1,Type=Float,Description="Score from EVE model (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/EVE/hg19/EVE_hg19.vcf.gz)">
+##INFO=<ID=EVE_Class20,Number=1,Type=String,Description="Classification (Benign, Uncertain, or Pathogenic) when setting 20% as uncertain (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/EVE/hg19/EVE_hg19.vcf.gz)">
+##INFO=<ID=EVE_Class50,Number=1,Type=String,Description="Classification (Benign, Uncertain, or Pathogenic) when setting 50% as uncertain (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/EVE/hg19/EVE_hg19.vcf.gz)">
+##INFO=<ID=EVE_Class90,Number=1,Type=String,Description="Classification (Benign, Uncertain, or Pathogenic) when setting 90% as uncertain (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/EVE/hg19/EVE_hg19.vcf.gz)">
+##INFO=<ID=Eigen,Number=1,Type=String,Description="calculated by self of overlapping values in column 7 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/Eigen/eigen_hg19.txt.gz">
+##INFO=<ID=GERP,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 4 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/gerp/hg19/gerp_hg19.bed.gz">
+##INFO=<ID=GERP_vep,Number=.,Type=String,Description="/media/custom_data/gerp/hg19/All_hg19_RS.bw">
+##INFO=<ID=GERP_vep_all,Number=.,Type=String,Description="/media/custom_data/gerp/hg19/All_hg19_RS.bw">
+##INFO=<ID=GWAVA,Number=.,Type=String,Description="calculated by uniq of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/gwava_scores/gwava_scores.bed.gz">
+##INFO=<ID=GWAVA_mean,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/gwava_scores/gwava_scores.bed.gz">
+##INFO=<ID=IntSplice2,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/IntSplice/hg19/IntSplice_v2.0_prediction_hg19.txt.gz">
+##INFO=<ID=MISTIC,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MISTIC/hg19/MISTIC_GRCh37.tsv.gz">
+##INFO=<ID=MLCsplice,Number=1,Type=String,Description="calculated by self of overlapping values in column 12 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MLCsplice/hg19/MLCsplice_hg19.tsv.gz">
+##INFO=<ID=MVP,Number=1,Type=String,Description="calculated by self of overlapping values in column 9 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MVP/hg19/MVP_hg19.tsv.gz">
+##INFO=<ID=MutFormer,Number=1,Type=String,Description="calculated by self of overlapping values in column 6 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MutFormer/MutFormer_hg19.tsv.gz">
+##INFO=<ID=MutScore,Number=1,Type=String,Description="calculated by self of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MutScore/hg19/mutscore_v1.0_hg19.tsv.gz">
+##INFO=<ID=Pangolin,Number=.,Type=String,Description="Pangolin splice scores. Format: gene|pos:score_change|pos:score_change|...">
+##INFO=<ID=PrimateAI,Number=1,Type=String,Description="calculated by self of overlapping values in column 11 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/primateAI/hg19/primateAI_scores_v0.2.tsv.gz">
+##INFO=<ID=REVEL,Number=1,Type=String,Description="calculated by self of overlapping values in column 7 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/REVEL/hg19/revel_v1.3_hg19.tsv.gz">
+##INFO=<ID=ReMM,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 3 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/reMM_genomiser/ReMM.v0.3.1.txt.bgz">
+##INFO=<ID=SCAP,Number=A,Type=String,Description="SCAP scores; Format=id:Allele,region:String,rawscore:Float,sensscore:Float,rawscore_dom:Float,sensscore_dom:Float,rawscore_rec:Float,senscore_rec:Float (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/S-CAP/scap_COMBINED_v1.0.vcf.gz)">
+##INFO=<ID=SPiP,Number=.,Type=String,Description="SPiPs predictions of splicing defects. Format: 'Alt|varID|Interpretation|InterConfident|SPiPscore|strand|gNomen|varType|ntChange|ExonInfo|exonSize|transcript|gene|NearestSS|DistSS|RegType|SPiCEproba|SPiCEinter_2thr|deltaMES|BP|mutInPBarea|deltaESRscore|posCryptMut|sstypeCryptMut|probaCryptMut|classProbaCryptMut|nearestSStoCrypt|nearestPosSStoCrypt|nearestDistSStoCrypt|posCryptWT|probaCryptWT|classProbaCryptWT|posSSPhysio|probaSSPhysio|classProbaSSPhysio|probaSSPhysioMut|classProbaSSPhysioMut'">
+##INFO=<ID=SQUIRLS_SCORE,Number=A,Type=String,Description="Squirls pathogenicity score">
+##INFO=<ID=SiPhy,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 5 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/SiPhy/SiPhy_hg19.bed.gz">
+##INFO=<ID=SpliceAI,Number=.,Type=String,Description="SpliceAIv1.3 variant annotation. These include delta scores (DS) and delta positions (DP) for acceptor gain (AG), acceptor loss (AL), donor gain (DG), and donor loss (DL). Format: ALLELE|SYMBOL|DS_AG|DS_AL|DS_DG|DS_DL|DP_AG|DP_AL|DP_DG|DP_DL (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/spliceai/v1.3/hg19/spliceai_scores.raw.snv.hg19.vcf.gz)">
+##INFO=<ID=SpliceAI_ind,Number=.,Type=String,Description="SpliceAIv1.3 variant annotation. These include delta scores (DS) and delta positions (DP) for acceptor gain (AG), acceptor loss (AL), donor gain (DG), and donor loss (DL). Format: ALLELE|SYMBOL|DS_AG|DS_AL|DS_DG|DS_DL|DP_AG|DP_AL|DP_DG|DP_DL (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/spliceai/v1.3/hg19/spliceai_scores.raw.indel.hg19.vcf.gz)">
+##INFO=<ID=TraP,Number=1,Type=String,Description="calculated by self of overlapping values in column 6 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/traP/v3/TraP_v3.txt.gz">
+##INFO=<ID=VARITY_ER,Number=1,Type=String,Description="calculated by self of overlapping values in column 10 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/varity/hg19/varity_hg19.tsv.gz">
+##INFO=<ID=VARITY_R,Number=1,Type=String,Description="calculated by self of overlapping values in column 9 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/varity/hg19/varity_hg19.tsv.gz">
+##INFO=<ID=cVEP,Number=1,Type=String,Description="calculated by self of overlapping values in column 8 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/cVEP/hg19/cVEP_hg19.tsv.gz">
+##INFO=<ID=dpsi_max_tissue,Number=1,Type=String,Description="calculated by self of overlapping values in column 6 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/spidex/spidex_hg19.txt.gz">
+##INFO=<ID=dpsi_zscore,Number=1,Type=String,Description="calculated by self of overlapping values in column 7 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/spidex/spidex_hg19.txt.gz">
+##INFO=<ID=fathmmMKL,Number=1,Type=String,Description="calculated by self of overlapping values in column 6 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/fathmmMKL/hg19/fathmm-MKL_Current.txt.gz">
+##INFO=<ID=fitcons,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 4 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/fitConsv1.01/fitcons_v1.01.bed.gz">
+##INFO=<ID=funseq2,Number=1,Type=String,Description="calculated by self of overlapping values in column 6 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/funseq2/hg19/funseq216_hg19.bed.gz">
+##INFO=<ID=funseq2_mean,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 6 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/funseq2/hg19/funseq216_hg19.bed.gz">
+##INFO=<ID=gnomADg_AF,Number=A,Type=Float,Description="Alternate allele frequency in samples (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/gnomAD/hg19/gnomAD_v2.1_justImportantFields.vcf.gz)">
+##INFO=<ID=gnomADg_AF_nfe,Number=A,Type=Float,Description="Alternate allele frequency in samples of non-Finnish European ancestry (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/gnomAD/hg19/gnomAD_v2.1_justImportantFields.vcf.gz)">
+##INFO=<ID=gnomADg_AF_nwe,Number=A,Type=Float,Description="Alternate allele frequency in samples of North-Western European ancestry (from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/gnomAD/hg19/gnomAD_v2.1_justImportantFields.vcf.gz)">
+##INFO=<ID=linsight_g,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 4 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/wgsa_dbNSFP/resources/LINSIGHT/LINSIGHT_hg19.bed.bgz">
+##INFO=<ID=phastCons,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 4 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/phastcons100/hg19/phastCons_hg19.bed.gz">
+##INFO=<ID=phastCons_vep,Number=.,Type=String,Description="/media/custom_data/phastcons100/hg19/hg19.100way.phastCons.bw">
+##INFO=<ID=phyloP,Number=1,Type=Float,Description="calculated by mean of overlapping values in column 4 from /mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/phyloP100/hg19/phyloP_hg19.bed.gz">
+##INFO=<ID=phyloP_vep,Number=.,Type=String,Description="/media/custom_data/phyloP100/hg19/hg19.100way.phyloP100way.bw">
+##29way_logOdds=29way_logOdds from dbNSFP file
+##CADDSplice_PHRED=PHRED-like scaled CADD Splice score
+##CADDSplice_RAW=Raw CADD Splice score
+##CADD_PHRED=PHRED-like scaled CADD score
+##CADD_RAW=Raw CADD score
+##Condel=Consensus deleteriousness score for an amino acid substitution based on SIFT and PolyPhen-2
+##DANN_score=DANN_score from dbNSFP file
+##ExACpLI=ExACpLI value for gene
+##FATHMM_score=FATHMM_score from dbNSFP file
+##FDR=MTR false discovery rate adjusted binomial exact test.
+##GERP++_RS=GERP++_RS from dbNSFP file
+##GeneSplicer=GeneSplicer predictions
+##HGVS_IntronEndOffset=HGVS intron end offset
+##HGVS_IntronStartOffset=HGVS intron start offset
+##LINSIGHT=LINSIGHT from dbNSFP file
+##LRT_pred=LRT_pred from dbNSFP file
+##LRT_score=LRT_score from dbNSFP file
+##M-CAP_score=M-CAP_score from dbNSFP file
+##MPC=MPC score
+##MTR=MTR score
+##MTR_centile=MTR gene-specific percentile
+##MaxEntScan_alt=MaxEntScan alternate sequence score
+##MaxEntScan_diff=MaxEntScan score difference
+##MaxEntScan_ref=MaxEntScan reference sequence score
+##MetaLR_pred=MetaLR_pred from dbNSFP file
+##MetaLR_score=MetaLR_score from dbNSFP file
+##MetaSVM_pred=MetaSVM_pred from dbNSFP file
+##MetaSVM_score=MetaSVM_score from dbNSFP file
+##MutPred_score=MutPred_score from dbNSFP file
+##MutationAssessor_score=MutationAssessor_score from dbNSFP file
+##MutationTaster_score=MutationTaster_score from dbNSFP file
+##NMD=Nonsense-mediated mRNA decay escaping variants prediction
+##PROVEAN_score=PROVEAN_score from dbNSFP file
+##Polyphen2_HDIV_score=Polyphen2_HDIV_score from dbNSFP file
+##Polyphen2_HVAR_score=Polyphen2_HVAR_score from dbNSFP file
+##SIFT4G_score=SIFT4G_score from dbNSFP file
+##SIFT_score=SIFT_score from dbNSFP file
+##SpliceRegion=SpliceRegion predictions
+##TSSDistance=Distance from the transcription start site
+##VEP-command-line='vep --force_overwrite --stats_text --hgvs --hgvsg --pubmed --check_existing --cache --dir /media/cache --sift b --polyphen b --numbers --regulatory --variant_class --canonical --ccds --mane --domains --dont_skip --cache_version 107 -a GRCh37 --fasta /media/cache/homo_sapiens/107_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa.gz --plugin HGVSIntronOffset --plugin TSSDistance --plugin dbscSNV,/media/custom_data/dbscSNV/hg19/dbscSNV1.1_hg19.txt.gz --plugin ExACpLI,/media/custom_data/ExACpLI/ExACpLI_values.txt --plugin GeneSplicer,/media/custom_data/genesplicer/bin/linux/genesplicer,/media/custom_data/genesplicer/human --plugin MaxEntScan,/media/custom_data/MaxEntScan --plugin SpliceRegion --plugin NMD --plugin Condel,/media/custom_data/condel,b --plugin MPC,/mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MPC/hg19/fordist_constraint_official_mpc_values_v2.txt.gz --plugin MTR,/mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/MTR/hg19/MTR_v2.0.tsv.gz --plugin CADD,/media/custom_data/cadd/hg19/v1.4/whole_genome_SNVs.tsv.gz,/media/custom_data/cadd/hg19/v1.4/InDels.tsv.gz --plugin CADDSplice,/media/custom_data/caddSplice/hg19/v1.6/whole_genome_SNVs.tsv.gz,/media/custom_data/caddSplice/hg19/v1.6/InDels.tsv.gz --plugin dbNSFP,consequence=ALL,/media/custom_data/dbNSFP/hg19/dbNSFP4.0b1a_hg19.txt.gz,GERP++_RS,phyloP30way_mammalian,29way_logOdds,phastCons30way_mammalian,MutationAssessor_score,SIFT4G_score,SIFT_score,Polyphen2_HDIV_score,Polyphen2_HVAR_score,MutationTaster_score,FATHMM_score,fathmm-MKL_coding_score,PROVEAN_score,DANN_score,MetaSVM_score,MetaSVM_pred,MetaLR_score,MetaLR_pred,integrated_fitCons_score,LRT_score,LRT_pred,MutPred_score,VEST4_score,M-CAP_score,LINSIGHT --plugin UTRannotator,/media/cache/Plugins/UTRannotator/uORF_starts_ends_GRCh37_PUBLIC.txt --custom /media/custom_data/gerp/hg19/All_hg19_RS.bw,GERP_vep,bigwig,exact,0 --custom /media/custom_data/gerp/hg19/All_hg19_RS.bw,GERP_vep_all,bigwig,overlap,0 --custom /media/custom_data/phyloP100/hg19/hg19.100way.phyloP100way.bw,phyloP_vep,bigwig,exact,0 --custom /media/custom_data/phastcons100/hg19/hg19.100way.phastCons.bw,phastCons_vep,bigwig,exact,0 --af --af_1kg --max_af --af_gnomade --var_synonyms --per_gene -pick_order ccds,canonical,biotype,rank --offline --gencode_basic --no_intergenic -i /mnt/nfs/lobo/MCFONSECA-NFS/pedro.barbosa/resources/deepIntronicVariants/vazDrago/3_variants_ready2vep_sort.txt --vcf --compress_output bgzip --output_file vazDrago_VEP.vcf.gz'
+##VEP="v107" time="2022-08-01 14:36:37" cache="/media/cache/homo_sapiens/107_GRCh37" ensembl-io=107.a473894 ensembl=107.5f39899 ensembl-variation=107.db634f2 ensembl-funcgen=107.0fbd7d5 1000genomes="phase3" COSMIC="92" ClinVar="202012" HGMD-PUBLIC="20204" assembly="GRCh37.p13" dbSNP="154" gencode="GENCODE 19" genebuild="2011-04" gnomADe="r2.1" polyphen="2.2.2" regbuild="1.0" sift="sift5.2.2"
+##VEST4_score=VEST4_score from dbNSFP file
+##ada_score=dbscSNV ADA score
+##existing_InFrame_oORFs=The number of existing inFrame overlapping ORFs (inFrame oORF) at the 5 prime UTR
+##existing_OutOfFrame_oORFs=The number of existing out-of-frame overlapping ORFs (OutOfFrame oORF) at the 5 prime UTR
+##existing_uORFs=The number of existing uORFs with a stop codon within the 5 prime UTR
+##fathmm-MKL_coding_score=fathmm-MKL_coding_score from dbNSFP file
+##five_prime_UTR_variant_annotation=Output the annotation of a given 5 prime UTR variant
+##five_prime_UTR_variant_consequence=Output the variant consequences of a given 5 prime UTR variant: uAUG_gained, uAUG_lost, uSTOP_lost or uFrameshift
+##integrated_fitCons_score=integrated_fitCons_score from dbNSFP file
+##phastCons30way_mammalian=phastCons30way_mammalian from dbNSFP file
+##phyloP30way_mammalian=phyloP30way_mammalian from dbNSFP file
+##rf_score=dbscSNV RF score
+##SPiPCommand=/mnt/nfs/lobo/IMM-NFS/ensembl_vep/custom_data/SPiP/SPiPv2.1_main.r --input /mnt/nfs/lobo/MCFONSECA-NFS/pedro.barbosa/resources/deepIntronicVariants/vazDrago/4_hg19/vazDrago_VEP_cispliceai.vcf --output /mnt/nfs/lobo/MCFONSECA-NFS/pedro.barbosa/resources/deepIntronicVariants/vazDrago/4_hg19/vazDrago_VEP_spip.vcf --GenomeAssenbly hg19 --threads 20 --maxLines 1000 --VCF 
+##vcfanno=0.3.3
+##bcftools_normVersion=1.14-20-gcb9895c+htslib-1.14-8-gf1ac6bb
+##bcftools_normCommand=norm --check-ref x -f /home/pedro.barbosa/mcfonseca/shared/genomes/human/hg19/GRCh37.primary_assembly_nochr.genome.fa.bgz 1_vazDrago_withSymbol.vcf.gz; Date=Thu Aug  4 10:23:26 2022
+##bcftools_viewVersion=1.15.1+htslib-1.15.1
+##bcftools_viewCommand=view -h vazDrago.vcf.gz; Date=Mon Sep 26 15:56:55 2022
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+12	108961426	ISCU:IVS5+382G>C	G	C	.	.	CSQ=C|intron_variant|MODIFIER|ISCU|ENSG00000136003|Transcript|ENST00000311893|protein_coding||4/4|ENST00000311893.9:c.418+382G>C|||||||rs767000507&CS081927||1||SNV|HGNC|29882|YES|||CCDS44966.1||||||12:g.108961426G>C|||||||2.238e-05|0|0|0|0|0|5.713e-05|0|0|5.713e-05|gnomADe_NFE|pathogenic||1&1|19846308&18296749&18304497&20206689||ClinVar::RCV000208760&VCV000223141||||||382|382||9.21619245134896E-5|0.004|0.14||||||||||||5.663|0.188041|7.440|0.317769|||||||||||||||||||||||||||||||0.89300000667572|0.89300000667572|1.20200002193451|0.00499999988824129;SQUIRLS_SCORE=8.701e-03;Pangolin=ENSG00000136003.16_5|8:0.23|26:-0.0|Warnings:;CI-SpliceAI=C|ENSG00000136003|0.25|0.01|0.02|0.00|8|270|93|366;SPiP=C|NM_213595:g.108961426:G>C|NTR|00 % [00 % - 00.94 %]|0.006|+|108961426|substitution|G>C|Intron 4|  1562|NM_213595|ISCU|donor|   382|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|108961433|Acc|0.073717246076708001|Yes|Don|108961044|389|108961433|0.028072621946393|No|108962606|0.1843929905|Yes|0.1843929905|Yes,C|NM_001301141:g.108961426:G>C|NTR|00.49 % [00.06 % - 01.77 %]|0.014|+|108961426|substitution|G>C|Intron 4|   651|NM_001301141|ISCU|acceptor|  -270|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|108961433|Acc|0.073717246076708001|Yes|Acc|108961695|-263|108961433|0.028072621946393|No|108961695|0.0098226417|No|0.0098226417|No,C|NM_001301140:g.108961426:G>C|NTR|01.85 % [00.38 % - 05.32 %]|0.002|+|108961426|substitution|G>C|Intron 4|   389|NM_001301140|ISCU|acceptor|    -8|IntronCons|0.00090|low|0|0|No|10.0000000|0|No site|0.000000000000000000|No|No site|0|0|0|0.000000000000000|No|0|0.0000000000|No|0.0000000000|No,C|NM_001320042:g.108961426:G>C|NTR|01.85 % [00.38 % - 05.32 %]|0.002|+|108961426|substitution|G>C|Intron 4|   389|NM_001320042|ISCU|acceptor|    -8|IntronCons|0.00090|low|0|0|No|10.0000000|0|No site|0.000000000000000000|No|No site|0|0|0|0.000000000000000|No|0|0.0000000000|No|0.0000000000|No,C|NM_014301:g.108961426:G>C|NTR|00 % [00 % - 00.94 %]|0.006|+|108961426|substitution|G>C|Intron 5|  1562|NM_014301|ISCU|donor|   382|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|108961433|Acc|0.073717246076708001|Yes|Don|108961044|389|108961433|0.028072621946393|No|108962606|0.1843929905|Yes|0.1843929905|Yes,C|NR_135127:g.108961426:G>C|NTR|01.85 % [00.38 % - 05.32 %]|0.002|+|108961426|substitution|G>C|Intron 5|   389|NR_135127|ISCU|acceptor|    -8|IntronCons|0.00090|low|0|0|No|10.0000000|0|No site|0.000000000000000000|No|No site|0|0|0|0.000000000000000|No|0|0.0000000000|No|0.0000000000|No;GERP=0.893;phastCons=0.005;phyloP=1.202;fitcons=0.1562;CDTS_score=2.31383;CDTS_percentile=74.043479;linsight_g=0.0778;SiPhy=3.3498;fathmmMKL=0.21738;Eigen=4.85036;ReMM=0.816;DANN=0.46839047873983686;funseq2=1.60797146376689,2.58805381886148;funseq2_mean=2.098;TraP=0.452;SpliceAI=C|ISCU|0.17|0.00|0.00|0.00|8|26|26|8;SCAP=3:3intronic:0.006724700220639754:0.947580645161:.:.:.:.;ConSpliceML=ISCU|0.722;IntSplice2=0.25295258362114414,0.2506470022301496;CAPICE=0.0000;MLCsplice=0.0433227075725853,0.0433227075725853
+15	42697047	CAPN3:c.1782+1072G>C	G	C	.	SQUIRLS	CSQ=C|intron_variant|MODIFIER|CAPN3|ENSG00000092529|Transcript|ENST00000397163|protein_coding||14/23|ENST00000397163.3:c.1782+1072G>C|||||||CS087766||1||SNV|HGNC|1480|YES|||CCDS45245.1||||||15:g.42697047G>C||||||||||||||||||||1|||||||||1072|1072||||0.00||||||||||||5.672|0.188575|5.266|0.162222|||||||||||||||||||||||||||||||1.91999995708466|1.91999995708466|0.305999994277954|0;SQUIRLS_SCORE=0.124;Pangolin=ENSG00000258461.5_11|106:0.1|1:-0.03|Warnings:ENSG00000092529.25_15|106:0.1|1:-0.03|Warnings:;CI-SpliceAI=C|ENSG00000092529|0.03|0.00|0.09|0.00|-83|1|2|-712;SPiP=C|NM_173087:g.42697047:G>C|NTR|00 % [00 % - 00.92 %]|0.004|+|42697047|substitution|G>C|Intron 13|  5525|NM_173087|CAPN3|donor|  1072|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|42697049|Don|0.046792359857494102|Yes|Don|42695975|1074|42697049|0.016330688415403|No|42695975|0.1959786575|Yes|0.1959786575|Yes,C|NM_024344:g.42697047:G>C|NTR|00 % [00 % - 00.92 %]|0.012|+|42697047|substitution|G>C|Intron 14|  4433|NM_024344|CAPN3|donor|  1072|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|42697049|Don|0.046792359857494102|Yes|Don|42695975|1074|42697049|0.016330688415403|No|42695975|0.1959786575|Yes|0.1959786575|Yes,C|NM_000070:g.42697047:G>C|NTR|00 % [00 % - 00.92 %]|0.008|+|42697047|substitution|G>C|Intron 14|  2148|NM_000070|CAPN3|donor|  1072|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|42697049|Don|0.046792359857494102|Yes|Acc|42698123|-1075|42697049|0.016330688415403|No|42695975|0.1959786575|Yes|0.1959786575|Yes,C|NM_173088:g.42697047:G>C|NTR|00 % [00 % - 00.92 %]|0.008|+|42697047|substitution|G>C|Intron 3|  2148|NM_173088|CAPN3|donor|  1072|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|42697049|Don|0.046792359857494102|Yes|Acc|42698123|-1075|42697049|0.016330688415403|No|42695975|0.1959786575|Yes|0.1959786575|Yes,C|NM_173089:g.42697047:G>C|NTR|03.43 % [01.39 % - 06.94 %]|0.054|+|42697047|substitution|G>C|Exon 1|   177|NM_173089|CAPN3|donor|  -107|ExonESR|0.00000|Outside SPiCE Interpretation|0|0|No| 2.0867371|42697049|Don|0.046792359857494102|Yes|Don|42697153|-105|42697049|0.016330688415403|No|0|0.0000000000|No|0.0000000000|No,C|NM_173090:g.42697047:G>C|NTR|03.43 % [01.39 % - 06.94 %]|0.054|+|42697047|substitution|G>C|Exon 1|   177|NM_173090|CAPN3|donor|  -107|ExonESR|0.00000|Outside SPiCE Interpretation|0|0|No| 2.0867371|42697049|Don|0.046792359857494102|Yes|Don|42697153|-105|42697049|0.016330688415403|No|0|0.0000000000|No|0.0000000000|No;GERP=1.92;phastCons=0;phyloP=0.306;fitcons=0.0784;CDTS_score=-5.42867;CDTS_percentile=9.416027;linsight_g=0.0926;SiPhy=7.7865;fathmmMKL=0.18030;Eigen=6.1444;ReMM=0.752;DANN=0.58282262656815087;funseq2=0.95561519588021,1.93546490153927,1.9356975509748;funseq2_mean=1.6089;TraP=0.156;SpliceAI=C|CAPN3|0.06|0.02|0.02|0.00|7|1|2|1;ConSpliceML=CAPN3|0.733;CAPICE=0.0006
+X	154131240	F8:c.5998+941G>A	C	T	.	.	CSQ=T|intron_variant|MODIFIER|F8|ENSG00000185010|Transcript|ENST00000360256|protein_coding||18/25|ENST00000360256.4:c.5999-798G>A|||||||CS139818||-1||SNV|HGNC|3546|YES|||CCDS35457.1||||||X:g.154131240C>T||||||||||||||||||||1|||||||||-798|-798||||1.00||||||||||||6.127|0.219623|9.658|0.527439|||||||||||||||||||||||||||||||0.773000001907349|0.773000001907349|-0.830999970436096|0;SQUIRLS_SCORE=8.526e-03;Pangolin=ENSG00000185010.15_9|-11:0.43|-1:-0.11|Warnings:;CI-SpliceAI=T|ENSG00000185010|0.52|0.01|0.25|0.00|-11|-1|-136|-521;SPiP=T|NM_000132:g.154131240:G>A|NTR|00.5 % [00.06 % - 01.78 %]|0.000|-|154131240|substitution|G>A|Intron 18|  1738|NM_000132|F8|acceptor|  -798|DeepIntron|0.00000|Outside SPiCE Interpretation|0|0|No|10.0000000|154131229|Acc|0.001113021043756290|No|Acc|154130442|-787|154131229|0.000002695872840|No|154130442|0.0220709538|No|0.0220709538|No;GERP=0.773;phastCons=0;phyloP=-0.831;CDTS_score=-8.9907;CDTS_percentile=1.514934;linsight_g=0.0456;SiPhy=4.6666;fathmmMKL=0.12757;ReMM=0.732;DANN=0.78121650462934877;funseq2=0.411397655752093;funseq2_mean=0.4114;TraP=0.002;SpliceAI=T|F8|0.44|0.34|0.00|0.00|-11|-1|-42|-1;ConSpliceML=F8|0.046;CAPICE=0.0005

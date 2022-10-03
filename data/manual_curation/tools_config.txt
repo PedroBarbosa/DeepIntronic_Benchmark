@@ -1,0 +1,19 @@
+#Name	VCF_annotation_field	Directionality	Threshold	Scope	Processing_function
+# Whole genome
+CADD-Splice	CADDSplice_PHRED
+
+# Splicing
+SQUIRLS	SQUIRLS_SCORE
+HAL	HAL_DIFF
+SPIDEX	dpsi_zscore
+dbscSNV	ada_score,rf_score
+MaxEntScan	MaxEntScan_diff
+SpliceAI	SpliceAI,SpliceAI_ind
+S-CAP	SCAP
+TraP	TraP
+ConSpliceML	ConSpliceML
+MMSplice	mmsplice_deltaPSI
+kipoiSplice4	kipoisplice_4
+CI-SpliceAI	CI-SpliceAI
+Pangolin	Pangolin
+SPiP	SPiP
