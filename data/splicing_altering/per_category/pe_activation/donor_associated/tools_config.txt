@@ -1,0 +1,17 @@
+HAL	HAL_DIFF
+SPIDEX	dpsi_zscore
+dbscSNV	ada_score,rf_score
+SpliceAI	SpliceAI,SpliceAI_ind
+S-CAP	SCAP
+TraP	TraP
+ConSpliceML	ConSpliceML
+MMSplice	mmsplice_deltaPSI
+kipoiSplice4	kipoisplice_4
+CI-SpliceAI	CI-SpliceAI
+Pangolin	Pangolin
+SPiP	SPiP
+MLCsplice	MLCsplice
+SQUIRLS	SQUIRLS_SCORE
+#MaxEntScan(Sliding)	MaxEntScan	>	3	Splicing
+SpliceRover	SpliceRover	>	0.5	Splicing	conspliceml_like
+Spliceator	Spliceator	>	0.5	Splicing	conspliceml_like

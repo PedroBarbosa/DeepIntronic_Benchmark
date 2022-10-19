@@ -1,0 +1,17 @@
+HAL	HAL_DIFF
+SPIDEX	dpsi_zscore
+dbscSNV	ada_score,rf_score
+SpliceAI	SpliceAI,SpliceAI_ind
+S-CAP	SCAP
+TraP	TraP
+ConSpliceML	ConSpliceML
+MMSplice	mmsplice_deltaPSI
+kipoiSplice4	kipoisplice_4
+CI-SpliceAI	CI-SpliceAI
+Pangolin	Pangolin
+SPiP	SPiP
+SQUIRLS	SQUIRLS_SCORE
+MLCsplice	MLCsplice
+HEXplorer	HEXplorer	>	14	Splicing	conspliceml_like
+ESRseq	ESRseq	>	0.5	Splicing
+#ESEFinder	ESEfinder	>

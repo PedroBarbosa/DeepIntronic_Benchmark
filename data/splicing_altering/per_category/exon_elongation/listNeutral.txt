@@ -1,0 +1,4 @@
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/exon_elongation/sre_associated/neutral.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/exon_elongation/acceptor_associated/neutral.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/exon_elongation/new_donor/neutral.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/exon_elongation/donor_associated/neutral.vcf.gz
