@@ -6,6 +6,7 @@ library(tidyr)
 library(tibble)
 library(stringr)
 library(ggbump)
+library(forcats)
 
 setwd(getwd())
 list_files <- list(branchpoint = '../out/out_branchpoint/tools_benchmark/all_types/results_tsv/statistics_all_types_all.tsv',
@@ -32,10 +33,68 @@ df$analysis <- factor(df$analysis, levels = c("branchpoint", "pe_acceptor", "pe_
                                               "elong_acceptor", "elong_sre", "elong_new_donor", "elong_donor_associated"))
 
 
+####################################
+########## Per class boxplot #######
+####################################
+major_label_f <- function(x){
+
+  if (grepl("acceptor", x)){
+    return("Acceptor associated")
+  }
+  else if (grepl("sre", x)){
+    return("Splicing regulatory elements")
+  }
+  else if (grepl("new_donor", x)){
+    return("New splice donor")
+  }
+  else if (grepl("donor_associated",x )){
+    return("Donor associated")
+  }
+}
 
 pe <- df %>% filter(str_detect(analysis, "pe_"))
-elong <- df %>% filter(str_detect(analysis, "elong_"))
+pe$group <- 'Pseudoexon activation'
+pe$major_group <- sapply(pe$analysis, major_label_f)
 
+elong <- df %>% filter(str_detect(analysis, "elong_"))
+elong$group <- 'Exon elongation'
+elong$major_group <- sapply(elong$analysis, major_label_f)
+df <- bind_rows(pe, elong)
+   
+ggplot(df %>% filter(analysis != "branchpoint"), aes(x=group, y=pr_auROC,fill=group)) +
+  geom_boxplot(alpha=0.5) + 
+  geom_point() +
+  facet_wrap(~major_group) + 
+  theme_bw() +
+  theme(legend.title=element_blank(),
+        axis.text.y = element_text(size=11),
+        axis.text.x = element_blank(),
+        axis.title.y = element_text(size=11),
+        axis.line = element_line(colour = "black"),
+        panel.background = element_blank(),
+        strip.text.x = element_text(size = 10, colour = "black"),
+        plot.title = element_text(size=15, hjust = 0.5),
+        legend.text = element_text(size=12)) +
+  ylim(0.2, 1) +
+  labs(x = '', y = 'Average Precision')
+
+ggplot(df, aes(x=reorder(tool, -pr_auROC, median), y=pr_auROC, fill = group)) +
+  geom_boxplot(alpha=0.5, outlier.colour = NULL) + 
+  #geom_point(shape = 21) +
+  theme_bw() +
+  theme(legend.title=element_blank(),
+        axis.text.y = element_text(size=12),
+        axis.text.x = element_text(size=12, angle = 75),
+        axis.title.y = element_text(size=12),
+        axis.line = element_line(colour = "black"),
+        panel.background = element_blank(),
+        legend.text = element_text(size=12)) +
+  ylim(0.2, 1) +
+  labs(x = '', y = 'Average Precision')
+
+#####################################
+########   All categories  ##########
+#####################################
 # Keep only tools that predict all categories
 pe_all <- pe %>% 
   group_by(tool) %>% 
