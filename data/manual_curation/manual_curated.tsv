@@ -48,7 +48,7 @@ X	32407106	A	T	ENSG00000198947	DMD	ENST00000357033.4:c.4518+512T>A	X:g.32407106A
 2	71900503	C	T	ENSG00000135636	DYSF	ENST00000410020.3:c.5785-824C>T	2:g.71900503C>T	51/55	.	new_splice_donor	180bp_pseudoexon_inclusion	Muscular Dystrophy (253601)	pbarbosa_2022
 11	68697719	C	A	ENSG00000132740	IGHMBP2	ENST00000255078.3:c.1235+894C>A	11:g.68697719C>A	8/14	.	new_splice_acceptor	182bp_pseudoexon_inclusion	Charcot-Marie-Tooth disease (616155)	pbarbosa_2022
 9	34649951	A	G	ENSG00000213930	GALT	ENST00000378842.3:c.1059+390A>G	9:g.34649951A>G	10/10	.	new_splice_acceptor	187bp_pseudoexon_inclusion	Galactosemia	pbarbosa_2022
-17	36494957	C	T	ENSG00000188888	GPR179	ENST00000342292.4:c.903+343G>A	17:g.36494957C>T	2/10	3.18689999403432e-05	new_splice_acceptor	197bp_pseudoexon_inclusion	Retinal dystrophy (614515)	pbarbosa_2022
+17	36494957	C	T	ENSG00000188888	GPR179	ENST00000342292.4:c.903+343G>A	17:g.36494957C>T	2/10	3.18689999403432e-05	new_splice_acceptor	197bp_pseudoexon_inclusion	Retinal dystrophy (614565)	pbarbosa_2022
 6	35477388	C	T	ENSG00000112041	TULP1	ENST00000229771.6:c.718+23G>A	6:g.35477388C>T	7/14	.	strengthening_donor	20bp_exon_extension	Photoreceptor Dystrophy (602093)	pbarbosa_2022
 8	75272349	A	G	ENSG00000104381	GDAP1	ENST00000220822.7:c.311-23A>G	8:g.75272349A>G	2/5	.	new_splice_acceptor	22bp_exon_extension	Charcot-Marie-Tooth disease (607831)	pbarbosa_2022
 3	150660197	A	C	ENSG00000163646	CLRN1	ENST00000328863.4:c.254-649T>G	3:g.150660197A>C	1/3	.	new_splice_donor	230bp_pseudoexon_inclusion	Usher syndrome (276902)	pbarbosa_2022
@@ -94,7 +94,7 @@ X	31279780	T	C	ENSG00000198947	DMD	ENST00000357033.4:c.9225-647A>G	X:g.31279780T
 1	94493901	T	C	ENSG00000198691	ABCA4	ENST00000370225.3:c.4539+1100A>G	1:g.94493901T>C	30/49	.	new_splice_donor	68bp_pseudoexon_inclusion	Stargardt disease (248200)	pbarbosa_2022
 1	94493895	G	A	ENSG00000198691	ABCA4	ENST00000370225.3:c.4539+1106C>T	1:g.94493895G>A	30/49	.	strengthening_donor	68bp_pseudoexon_inclusion	Stargardt disease (248200)	pbarbosa_2022
 11	112100219	A	T	ENSG00000150787	PTS	ENST00000280362.3:c.164-712A>T	11:g.112100219A>T	2/5	.	change_sre	70bp_pseudoexon_inclusion	Tetrahydrobiopterin deficiency (261640)	pbarbosa_2022
-21	47409881	C	T	ENSG00000142156	COL6A1	ENST00000361866.3:c.930+189C>T	21:g.47409881C>T	11/34	.	new_splice_donor	72bp_pseudoexon_inclusion	Ullrich congenital muscular dystrophy (120220)	pbarbosa_2022
+21	47409881	C	T	ENSG00000142156	COL6A1	ENST00000361866.3:c.930+189C>T	21:g.47409881C>T	11/34	.	new_splice_donor	72bp_pseudoexon_inclusion	Ullrich congenital muscular dystrophy (254090)	pbarbosa_2022
 8	87674402	T	A	ENSG00000170289	CNGB3	ENST00000320005.5:c.852+4751A>T	8:g.87674402T>A	6/17	.	strengthening_acceptor	73bp_pseudoexon_inclusion	Achromatopsia (262300)	pbarbosa_2022
 9	135173806	T	C	ENSG00000107290	SETX	ENST00000224140.5:c.5549-107A>G	9:g.135173806T>C	12/25	.	strengthening_donor	73bp_pseudoexon_inclusion	Ataxia with Oculomotor Apraxia 2 (606002)	pbarbosa_2022
 1	94484001	C	T	ENSG00000198691	ABCA4	ENST00000370225.3:c.5196+1137G>A	1:g.94484001C>T	36/49	9.558400051901117e-05	strengthening_acceptor	73bp_pseudoexon_inclusion	Stargardt disease (248200)	pbarbosa_2022
@@ -157,7 +157,7 @@ X	48758901	G	A	ENSG00000102103	PQBP1	ENST00000218224.4:c.180-306G>A	X:g.48758901
 X	154249118	T	C	ENSG00000185010	F8	ENST00000360256.4:c.143+1567A>G	X:g.154249118T>C	1/25	.	new_splice_donor	191bp_pseudoexon_inclusion	Hemophilia A (306700)	pbarbosa_2022
 X	154193643	T	C	ENSG00000185010	F8	ENST00000360256.4:c.1443+602A>G	X:g.154193643T>C	9/25	.	new_splice_acceptor	262bp_pseudoexon_inclusion	Hemophilia A (306700)	pbarbosa_2022
 17	7910183	C	G	ENSG00000132518	GUCY2D	ENST00000254854.4:c.1378+151C>G	17:g.7910183C>G	4/19	.	new_splice_donor		Leber congenital amaurosis (204000)	pbarbosa_2022
-19	39014507	G	A	ENSG00000196218	RYR1	ENST00000359596.3:c.10441-48G>A	19:g.39014507G>A	69/105	.	new_splice_acceptor		Neonatal hypotonia (117000)	pbarbosa_2022
+19	39014507	G	A	ENSG00000196218	RYR1	ENST00000359596.3:c.10441-48G>A	19:g.39014507G>A	69/105	.	new_splice_acceptor		Neonatal hypotonia (616034)	pbarbosa_2022
 X	9708630	C	T	ENSG00000101850	GPR143	ENST00000467482.1:c.885+748G>A	X:g.9708630C>T	7/8	.	new_splice_acceptor	165bp_pseudoexon_inclusion	Ocular albinism (300500)	pbarbosa_2022
 12	48379984	C	T	ENSG00000139219	COL2A1	ENST00000380518.3:c.1527+135G>A	12:g.48379984C>T	23/53	.	new_splice_acceptor	234bp_pseudoexon_inclusion	Stickler syndrome (108300)	pbarbosa_2022
 13	52522135	C	T	ENSG00000123191	ATP7B	ENST00000242839.4:c.2866-1521G>A	13:g.52522135C>T	12/20	.	new_splice_acceptor		Wilson disease (277900)	pbarbosa_2022
@@ -165,7 +165,7 @@ X	9708630	C	T	ENSG00000101850	GPR143	ENST00000467482.1:c.885+748G>A	X:g.9708630C
 5	7883859	T	C	ENSG00000124275	MTRR	ENST00000264668.2:c.984+469T>C	5:g.7883859T>C	6/14	9.554099960951135e-05	change_sre	pseudoexon_inclusion	Homocystinuria, type cbIE (236270)	vazDrago_2017
 11	108141209	GGTAA	G	ENSG00000149311	ATM	ENST00000278616.4:c.2839-579_2839-576del	11:g.108141212_108141215del	18/62	.	change_sre	pseudoexon_inclusion	Ataxia-telangiectasia (208900)	vazDrago_2017
 11	108158168	A	G	ENSG00000149311	ATM	ENST00000278616.4:c.3994-159A>G	11:g.108158168A>G	26/62	.	change_sre	pseudoexon_inclusion	Ataxia-telangiectasia (208900)	vazDrago_2017
-13	100958030	A	G	ENSG00000175198	PCCA	ENST00000376285.1:c.1285-1416A>G	13:g.100958030A>G	14/23	.	change_sre	pseudoexon_inclusion	Propionicacidemia (606054)	vazDrago_2017
+13	100958030	A	G	ENSG00000175198	PCCA	ENST00000376285.1:c.1285-1416A>G	13:g.100958030A>G	14/23	.	change_sre	pseudoexon_inclusion	Propionic acidemia (606054)	vazDrago_2017
 X	32470726	C	G	ENSG00000198947	DMD	ENST00000357033.4:c.3603+2053G>C	X:g.32470726C>G	26/78	.	change_sre	pseudoexon_inclusion	Becker muscular dystrophy (300376)	vazDrago_2017
 X	100654735	C	T	ENSG00000102393	GLA	ENST00000218516.3:c.640-801G>A	X:g.100654735C>T	4/6	4.5296001189853996e-05	change_sre	pseudoexon_inclusion	Fabry disease (301500)	vazDrago_2017
 X	107813924	G	A	ENSG00000188153	COL4A5	ENST00000328300.6:c.385-719G>A	X:g.107813924G>A	6/52	.	change_sre	pseudoexon_inclusion	Alport Syndrome (301050)	vazDrago_2017
@@ -190,7 +190,7 @@ X	133628822	T	A	ENSG00000165704	HPRT1	ENST00000298556.7:c.485+1202T>A	X:g.133628
 1	100672742	T	C	ENSG00000137992	DBT	ENST00000370132.4:c.1018-550A>G	1:g.100672742T>C	8/10	.	new_splice_donor	pseudoexon_inclusion	Maple syrup urine disease, type II (248600)	vazDrago_2017
 1	215967783	T	C	ENSG00000042781	USH2A	ENST00000307340.3:c.9959-4159A>G	1:g.215967783T>C	50/71	.	new_splice_donor	pseudoexon_inclusion	Usher syndrome (276901)	vazDrago_2017
 1	216039721	G	A	ENSG00000042781	USH2A	ENST00000307340.3:c.8845+628C>T	1:g.216039721G>A	44/71	.	new_splice_donor	pseudoexon_inclusion	Usher syndrome (276901)	vazDrago_2017
-2	26500642	A	G	ENSG00000138029	HADHB	ENST00000317799.5:c.442+614A>G	2:g.26500642A>G	7/15	.	new_splice_donor	pseudoexon_inclusion	Mitochondrial trifunctional protein deficiency (609105)	vazDrago_2017
+2	26500642	A	G	ENSG00000138029	HADHB	ENST00000317799.5:c.442+614A>G	2:g.26500642A>G	7/15	.	new_splice_donor	pseudoexon_inclusion	Mitochondrial trifunctional protein deficiency (609015)	vazDrago_2017
 2	47635062	T	G	ENSG00000095002	MSH2	ENST00000233146.2:c.212-478T>G	2:g.47635062T>G	1/15	.	new_splice_donor	pseudoexon_inclusion	Lynch syndrome (120435)	vazDrago_2017
 2	71889030	G	T	ENSG00000135636	DYSF	ENST00000410020.3:c.5003+1249G>T	2:g.71889030G>T	45/55	.	new_splice_donor	pseudoexon_inclusion	Miyoshi muscular dystrophy 1(254130)	vazDrago_2017
 4	17500790	T	C	ENSG00000151552	QDPR	ENST00000281243.5:c.436+2552A>G	4:g.17500790T>C	4/6	.	new_splice_donor	pseudoexon_inclusion	Hyperphenylalaninemia, BH4-deficient, C (261630)	vazDrago_2017
@@ -204,7 +204,7 @@ X	133628822	T	A	ENSG00000165704	HPRT1	ENST00000298556.7:c.485+1202T>A	X:g.133628
 7	117280015	C	T	ENSG00000001626	CFTR	ENST00000003084.6:c.3718-2477C>T	7:g.117280015C>T	22/26	6.375499651767313e-05	new_splice_donor	pseudoexon_inclusion	Cystic Fibrosis (2197700)	vazDrago_2017
 9	98226337	T	C	ENSG00000185920	PTCH1	ENST00000331920.6:c.2561-2057A>G	9:g.98226337T>C	15/23	.	new_splice_donor	pseudoexon_inclusion	Gorlin syndrome (109400)	vazDrago_2017
 10	126100239	G	C	ENSG00000065154	OAT	ENST00000368845.5:c.199+303C>G	10:g.126100239G>C	2/9	.	new_splice_donor	pseudoexon_inclusion	Gyrate atrophy of choroid and retina (258870)	vazDrago_2017
-11	5247102	A	C	ENSG00000244734	HBB	ENST00000335295.4:c.316-146T>G	11:g.5247102A>C	2/2	.	new_splice_donor	pseudoexon_inclusion	β-Thalassemia7 (6713985)	vazDrago_2017
+11	5247102	A	C	ENSG00000244734	HBB	ENST00000335295.4:c.316-146T>G	11:g.5247102A>C	2/2	.	new_splice_donor	pseudoexon_inclusion	Beta-Thalassemia (613985)	vazDrago_2017
 11	17465872	T	C	ENSG00000006071	ABCC8	ENST00000389817.3:c.1333-1013A>G	11:g.17465872T>C	8/38	.	new_splice_donor	pseudoexon_inclusion	Hyperinsulinemic hypoglycemia (256450)	vazDrago_2017
 13	49046098	A	G	ENSG00000139687	RB1	ENST00000267163.4:c.2490-1398A>G	13:g.49046098A>G	23/26	.	new_splice_donor	pseudoexon_inclusion	Retinoblastoma (180200)	vazDrago_2017
 15	48721629	T	C	ENSG00000166147	FBN1	ENST00000316623.5:c.6872-961A>G	15:g.48721629T>C	56/65	.	new_splice_donor	pseudoexon_inclusion	Marfan syndrome (154700)	vazDrago_2017
@@ -234,7 +234,7 @@ X	153641699	G	A	ENSG00000102125	TAZ	ENST00000299328.5:c.284+110G>A	X:g.153641699
 21	33039383	C	G	ENSG00000142168	SOD1	ENST00000270142.6:c.240-188C>G	21:g.33039383C>G	3/4	.	strengthening_donor	pseudoexon_inclusion	Amyotrophic lateral sclerosis 1 (105400)	vazDrago_2017
 22	30070689	T	A	ENSG00000186575	NF2	ENST00000338641.4:c.1341-136T>A	22:g.30070689T>A	12/15	.	strengthening_donor	pseudoexon_inclusion	Neurofibromatosis (101000)	vazDrago_2017
 X	148568762	T	C	ENSG00000010404	IDS	ENST00000340855.6:c.1007-133A>G	X:g.148568762T>C	7/8	.	strengthening_donor	pseudoexon_inclusion	Mucopolysaccharidosis (309900)	vazDrago_2017
-3	136003251	A	G	ENSG00000114054	PCCB	ENST00000469217.1:c.714+462A>G	3:g.136003251A>G	7/15	.	strengthening_donor	pseudoexon_inclusion	Propionicacidemia (606054)	vazDrago_2017
+3	136003251	A	G	ENSG00000114054	PCCB	ENST00000469217.1:c.714+462A>G	3:g.136003251A>G	7/15	.	strengthening_donor	pseudoexon_inclusion	Propionic acidemia (606054)	vazDrago_2017
 5	112158423	A	T	ENSG00000134982	APC	ENST00000457016.1:c.1408+735A>T	5:g.112158423A>T	11/15	.	strengthening_donor	pseudoexon_inclusion	Familial Adenomatous Polyposis (175100)	vazDrago_2017
 12	88494960	T	C	ENSG00000198707	CEP290	ENST00000552810.1:c.2991+1655A>G	12:g.88494960T>C	26/53	0.0001277599949389696	strengthening_donor	pseudoexon_inclusion	Leber congenital amaurosis (611755)	vazDrago_2017
 13	32919384	T	G	ENSG00000139618	BRCA2	ENST00000544455.1:c.6937+594T>G	13:g.32919384T>G	12/27	0.00031875999411568046	strengthening_donor	pseudoexon_inclusion	Breast cancer (114480)	vazDrago_2017

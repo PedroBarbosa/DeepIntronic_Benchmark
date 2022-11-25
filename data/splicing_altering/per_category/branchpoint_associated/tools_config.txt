@@ -15,4 +15,5 @@ SQUIRLS	SQUIRLS_SCORE
 MLCsplice	MLCsplice
 labranchoR	labranchoR
 SVM_BP_finder	SVM_BP_finder	>	0.136	Splicing
-BPP	BPP	>	0.5	Splicing
+BPP	BPP	>	0.0006	Splicing
+BPHunter	BPHunter	>	3	Splicing

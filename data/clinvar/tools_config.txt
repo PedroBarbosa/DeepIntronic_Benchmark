@@ -10,9 +10,7 @@ LINSIGHT	linsight_g
 ReMM	ReMM
 FATHMM-MKL	fathmmMKL
 Eigen	Eigen
-FunSeq2	funseq2
 CADD-Splice	CADDSplice_PHRED
-CADD_v1.5	CADD_PHRED
 DANN	DANN
 CAPICE	CAPICE,CAPICE_ind
 
@@ -31,3 +29,5 @@ kipoiSplice4	kipoisplice_4
 CI-SpliceAI	CI-SpliceAI
 Pangolin	Pangolin
 SPiP	SPiP
+MLCsplice	MLCsplice
+AbSplice-DNA	AbSplice_DNA

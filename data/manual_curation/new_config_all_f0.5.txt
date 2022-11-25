@@ -1,0 +1,9 @@
+CADD-Splice	CADDSplice_PHRED	>	8.284	Whole_genome
+SQUIRLS	SQUIRLS_SCORE	>	0.016	Splicing
+SpliceAI	SpliceAI,SpliceAI_ind	>	0.1	Splicing
+TraP	TraP	>	0.211	Splicing
+ConSpliceML	ConSpliceML	>	0.19	Splicing
+CI-SpliceAI	CI-SpliceAI	>	0.08	Splicing
+Pangolin	Pangolin	>	0.158	Splicing
+SPiP	SPiP	>	0.009	Splicing
+AbSplice-DNA	AbSplice_DNA	>	0.004	Splicing

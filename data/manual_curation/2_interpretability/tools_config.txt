@@ -1,0 +1,2 @@
+SQUIRLS	SQUIRLS_SCORE	>	0.016	Splicing
+SPiP	SPiP	>	0.009	Splicing

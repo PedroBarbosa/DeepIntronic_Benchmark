@@ -1,0 +1,125 @@
+chr	pos	ref	alt	HGVSc	HGVSg	SYMBOL	Consequence	SQUIRLS (>0.016)	SQUIRLS_interpretation	SQUIRLS_n_bases_info
+6	6225105	C	T	ENST00000264870.3:c.799-12G>A	6:g.6225105C>T	F13A1	splice_polypyrimidine_tract_variant&intron_variant	1.0	New splice acceptor 	Correct
+8	75272349	A	G	ENST00000220822.7:c.311-23A>G	8:g.75272349A>G	GDAP1	intron_variant	1.0	New splice acceptor 	Correct
+11	47368616	C	T	ENST00000545968.1:c.906-36G>A	11:g.47368616C>T	MYBPC3	intron_variant	0.999	New splice acceptor 	Correct
+9	86590455	T	C	ENST00000376263.3:c.214-35A>G	9:g.86590455T>C	HNRNPK	intron_variant	0.995	New splice acceptor 	Correct
+21	34957110	C	T	ENST00000303071.5:c.607-36G>A	21:g.34957110C>T	DONSON	intron_variant	0.988	New splice acceptor 	Correct
+19	39014507	G	A	ENST00000359596.3:c.10441-48G>A	19:g.39014507G>A	RYR1	intron_variant	0.986	New splice acceptor 	Correct
+12	48393958	G	C	ENST00000380518.3:c.86-50C>G	12:g.48393958G>C	COL2A1	intron_variant	0.977	New splice acceptor 	Correct
+5	37164443	C	T	ENST00000425232.2:c.7534-14G>A	5:g.37164443C>T	C5orf42	splice_polypyrimidine_tract_variant&intron_variant	0.891	New splice acceptor 	Correct
+11	57365567	G	T	ENST00000278407.4:c.-22-155G>T	11:g.57365567G>T	SERPING1	intron_variant	0.716	New splice donor	Incorrect
+X	32366860	A	C	ENST00000357033.4:c.5326-215T>G	X:g.32366860A>C	DMD	intron_variant	0.658	New splice donor	Not possible to check
+1	94546299	T	C	ENST00000370225.3:c.859-25A>G	1:g.94546299T>C	ABCA4	intron_variant	0.576	Not informative	Not informative
+1	216064540	T	C	ENST00000307340.3:c.7595-2144A>G	1:g.216064540T>C	USH2A	intron_variant	0.529	New splice donor	Incorrect
+11	66618867	G	A	ENST00000393960.1:c.1983-116C>T	11:g.66618867G>A	PC	intron_variant	0.437	New splice donor	Not possible to check
+13	52534477	A	T	ENST00000242839.4:c.1947-19T>A	13:g.52534477A>T	ATP7B	intron_variant	0.412	Not informative	Not possible to check
+X	31899369	T	C	ENST00000357033.4:c.6913-5879A>G	X:g.31899369T>C	DMD	intron_variant	0.412	New splice donor	Incorrect
+1	98045449	G	C	ENST00000370192.3:c.1129-5923C>G	1:g.98045449G>C	DPYD	intron_variant	0.394	New splice donor	Not possible to check
+6	76593963	T	G	ENST00000369977.3:c.2417-1758T>G	6:g.76593963T>G	MYO6	intron_variant	0.381	New splice donor	Incorrect
+X	37657051	A	G	ENST00000378588.4:c.675-1157A>G	X:g.37657051A>G	CYBB	intron_variant	0.367	New splice donor	Not possible to check
+10	126100239	G	C	ENST00000368845.5:c.199+303C>G	10:g.126100239G>C	OAT	intron_variant	0.356	New splice donor	Not possible to check
+X	32460274	G	T	ENST00000357033.4:c.3787-843C>A	X:g.32460274G>T	DMD	intron_variant	0.354	Activate cryptic donor	Not possible to check
+2	71900503	C	T	ENST00000410020.3:c.5785-824C>T	2:g.71900503C>T	DYSF	intron_variant	0.354	New splice donor	Incorrect
+11	17465872	T	C	ENST00000389817.3:c.1333-1013A>G	11:g.17465872T>C	ABCC8	intron_variant	0.35	New splice donor	Not possible to check
+19	1386643	C	G	ENST00000233627.9:c.17-1167C>G	19:g.1386643C>G	NDUFS7	intron_variant	0.333	Activate cryptic donor	Not possible to check
+7	117280015	C	T	ENST00000003084.6:c.3718-2477C>T	7:g.117280015C>T	CFTR	intron_variant	0.31	New splice donor	Not possible to check
+X	32477825	C	A	ENST00000357033.4:c.3432+3731G>T	X:g.32477825C>A	DMD	intron_variant	0.31	New splice donor	Incorrect
+16	8926102	C	T	ENST00000268261.4:c.640-15479C>T	16:g.8926102C>T	PMM2	intron_variant	0.303	New splice donor	Not possible to check
+15	91337139	A	G	ENST00000355112.3:c.3020-258A>G	15:g.91337139A>G	BLM	intron_variant	0.286	New splice donor	Incorrect
+1	94526934	T	C	ENST00000370225.3:c.1938-619A>G	1:g.94526934T>C	ABCA4	intron_variant	0.285	Activate cryptic donor	Incorrect
+5	112115546	G	A	ENST00000457016.1:c.532-941G>A	5:g.112115546G>A	APC	intron_variant	0.283	Activate cryptic donor	Not possible to check
+X	31279780	T	C	ENST00000357033.4:c.9225-647A>G	X:g.31279780T>C	DMD	intron_variant	0.274	New splice donor	Incorrect
+13	113770192	G	A	ENST00000375581.3:c.571+78G>A	13:g.113770192G>A	F7	intron_variant	0.253	Activate cryptic donor	Incorrect
+1	155206890	G	T	ENST00000327247.5:c.999+242C>A	1:g.155206890G>T	GBA	intron_variant	0.249	Activate cryptic donor	Incorrect
+15	48721629	T	C	ENST00000316623.5:c.6872-961A>G	15:g.48721629T>C	FBN1	intron_variant	0.249	New splice acceptor 	Not possible to check
+15	48737716	C	T	ENST00000316623.5:c.5789-15G>A	15:g.48737716C>T	FBN1	splice_polypyrimidine_tract_variant&intron_variant	0.246	Not informative	Correct
+13	113770688	C	G	ENST00000375581.3:c.572-392C>G	13:g.113770688C>G	F7	intron_variant	0.23	New splice donor	Incorrect
+11	5247102	A	C	ENST00000335295.4:c.316-146T>G	11:g.5247102A>C	HBB	intron_variant	0.223	New splice donor	Not possible to check
+2	47635062	T	G	ENST00000233146.2:c.212-478T>G	2:g.47635062T>G	MSH2	intron_variant	0.217	New splice donor	Not possible to check
+16	88898676	T	C	ENST00000268695.5:c.899-167A>G	16:g.88898676T>C	GALNS	intron_variant	0.215	New splice donor	Incorrect
+18	21132700	C	T	ENST00000269228.5:c.1554-1009G>A	18:g.21132700C>T	NPC1	intron_variant	0.21	Activate cryptic donor	Not possible to check
+18	21114289	G	A	ENST00000269228.5:c.3591+121C>T	18:g.21114289G>A	NPC1	intron_variant	0.204	No explanation	No explanation
+4	15989860	T	C	ENST00000510224.1:c.2077-521A>G	4:g.15989860T>C	PROM1	intron_variant	0.191	New splice donor	Incorrect
+22	21349779	C	T	ENST00000215739.8:c.1943-256C>T	22:g.21349779C>T	LZTR1	intron_variant	0.177	Activate cryptic donor	Not possible to check
+X	32366456	T	C	ENST00000357033.4:c.5448+67A>G	X:g.32366456T>C	DMD	intron_variant	0.163	New splice donor	Correct
+1	161284289	A	G	ENST00000367975.2:c.20+74A>G	1:g.161284289A>G	SDHC	intron_variant	0.162	New splice donor	Incorrect
+9	135173806	T	C	ENST00000224140.5:c.5549-107A>G	9:g.135173806T>C	SETX	intron_variant	0.16	Activate cryptic donor	Incorrect
+8	42328683	C	T	ENST00000342228.3:c.289+937G>A	8:g.42328683C>T	SLC20A2	intron_variant	0.157	No explanation	No explanation
+X	32535101	C	A	ENST00000357033.4:c.2292+1024G>T	X:g.32535101C>A	DMD	intron_variant	0.153	New splice donor	Incorrect
+13	49046098	A	G	ENST00000267163.4:c.2490-1398A>G	13:g.49046098A>G	RB1	intron_variant	0.151	New splice donor	Not possible to check
+3	150660197	A	C	ENST00000328863.4:c.254-649T>G	3:g.150660197A>C	CLRN1	intron_variant	0.146	New splice donor	Incorrect
+2	71889030	G	T	ENST00000410020.3:c.5003+1249G>T	2:g.71889030G>T	DYSF	intron_variant	0.145	New splice donor	Not possible to check
+16	56917770	C	T	ENST00000438926.2:c.1670-191C>T	16:g.56917770C>T	SLC12A3	intron_variant	0.136	New splice donor	Not possible to check
+1	100672742	T	C	ENST00000370132.4:c.1018-550A>G	1:g.100672742T>C	DBT	intron_variant	0.134	New splice donor	Not possible to check
+X	148568762	T	C	ENST00000340855.6:c.1007-133A>G	X:g.148568762T>C	IDS	intron_variant	0.129	Activate cryptic acceptor	Not possible to check
+X	13768358	A	G	ENST00000340096.6:c.935+706A>G	X:g.13768358A>G	OFD1	intron_variant	0.127	Activate cryptic donor	Not possible to check
+5	78180826	T	C	ENST00000264914.4:c.1142+581A>G	5:g.78180826T>C	ARSB	intron_variant	0.124	New splice donor	Incorrect
+15	42697047	G	C	ENST00000397163.3:c.1782+1072G>C	15:g.42697047G>C	CAPN3	intron_variant	0.124	Activate cryptic donor	Not possible to check
+1	94484125	T	C	ENST00000370225.3:c.5196+1013A>G	1:g.94484125T>C	ABCA4	intron_variant	0.122	Activate cryptic donor	Incorrect
+13	32919384	T	G	ENST00000544455.1:c.6937+594T>G	13:g.32919384T>G	BRCA2	intron_variant	0.12	Activate cryptic donor	Not possible to check
+1	94495923	C	T	ENST00000370225.3:c.4352+61G>A	1:g.94495923C>T	ABCA4	intron_variant	0.119	Activate cryptic donor	Correct
+16	56927219	C	T	ENST00000438926.2:c.2548+253C>T	16:g.56927219C>T	SLC12A3	intron_variant	0.118	New splice donor	Not possible to check
+4	108945190	G	T	ENST00000603302.1:c.636+471G>T	4:g.108945190G>T	HADH	intron_variant	0.113	New splice donor	Not possible to check
+X	154130719	C	T	ENST00000360256.4:c.5999-277G>A	X:g.154130719C>T	F8	intron_variant	0.112	Activate cryptic donor	Incorrect
+X	31200680	A	T	ENST00000357033.4:c.9974+175T>A	X:g.31200680A>T	DMD	intron_variant	0.109	Activate cryptic donor	Incorrect
+1	94509799	G	A	ENST00000370225.3:c.3050+370C>T	1:g.94509799G>A	ABCA4	intron_variant	0.105	New splice donor	Incorrect
+X	31219364	G	A	ENST00000357033.4:c.9807+2714C>T	X:g.31219364G>A	DMD	intron_variant	0.1	New splice donor	Not possible to check
+16	2107460	C	T	ENST00000219476.3:c.848+281C>T	16:g.2107460C>T	TSC2	intron_variant	0.095	Activate cryptic acceptor	Not possible to check
+1	216041166	G	C	ENST00000307340.3:c.8682-654C>G	1:g.216041166G>C	USH2A	intron_variant	0.091	Activate cryptic acceptor	Incorrect
+19	54633399	C	G	ENST00000321030.4:c.1374+654C>G	19:g.54633399C>G	PRPF31	intron_variant	0.088	New splice donor	Not possible to check
+9	21968795	A	C	ENST00000498124.1:c.458-25T>G	9:g.21968795A>C	CDKN2A	intron_variant	0.082	Not informative	Not possible to check
+19	11233632	G	A	ENST00000558518.1:c.2141-218G>A	19:g.11233632G>A	LDLR	intron_variant	0.079	Activate cryptic donor	Incorrect
+11	47364834	T	C	ENST00000545968.1:c.1224-21A>G	11:g.47364834T>C	MYBPC3	intron_variant	0.075	Not informative	Not possible to check
+X	154249118	T	C	ENST00000360256.4:c.143+1567A>G	X:g.154249118T>C	F8	intron_variant	0.071	New splice donor	Incorrect
+8	87617644	C	T	ENST00000320005.5:c.1663-1205G>A	8:g.87617644C>T	CNGB3	intron_variant	0.071	Activate cryptic donor	Incorrect
+X	66942551	A	G	ENST00000374690.3:c.2450-118A>G	X:g.66942551A>G	AR	intron_variant	0.064	New splice donor	Not possible to check
+1	94483922	G	T	ENST00000370225.3:c.5196+1216C>A	1:g.94483922G>T	ABCA4	intron_variant	0.063	Activate cryptic donor	Incorrect
+X	107820081	A	G	ENST00000328300.6:c.609+879A>G	X:g.107820081A>G	COL4A5	intron_variant	0.062	New splice donor	Incorrect
+9	98226337	T	C	ENST00000331920.6:c.2561-2057A>G	9:g.98226337T>C	PTCH1	intron_variant	0.053	New splice donor	Not possible to check
+1	94484082	T	C	ENST00000370225.3:c.5196+1056A>G	1:g.94484082T>C	ABCA4	intron_variant	0.052	New splice donor	Not possible to check
+11	47367305	G	A	ENST00000545968.1:c.1090+453C>T	11:g.47367305G>A	MYBPC3	intron_variant	0.049	Activate cryptic acceptor	Incorrect
+X	154130469	T	C	ENST00000360256.4:c.5999-27A>G	X:g.154130469T>C	F8	intron_variant	0.049	Activate cryptic acceptor	Not possible to check
+5	37031001	C	T	ENST00000282516.8:c.5862+3487C>T	5:g.37031001C>T	NIPBL	intron_variant	0.049	New splice donor	Incorrect
+10	79783995	G	A	ENST00000372371.3:c.645+312C>T	10:g.79783995G>A	POLR3A	intron_variant	0.049	New splice donor	Incorrect
+1	22215993	G	A	ENST00000374695.3:c.574+481C>T	1:g.22215993G>A	HSPG2	intron_variant	0.047	No explanation	No explanation
+17	29487248	C	T	ENST00000358273.4:c.288+1137C>T	17:g.29487248C>T	NF1	intron_variant	0.045	Activate cryptic donor	Not possible to check
+1	94493901	T	C	ENST00000370225.3:c.4539+1100A>G	1:g.94493901T>C	ABCA4	intron_variant	0.045	New splice donor	Incorrect
+3	158367854	G	A	ENST00000486715.1:c.689+908G>A	3:g.158367854G>A	GFM1	intron_variant	0.045	Activate cryptic donor	Incorrect
+1	216247476	T	C	ENST00000307340.3:c.5573-834A>G	1:g.216247476T>C	USH2A	intron_variant	0.044	Activate cryptic donor	Not possible to check
+5	112158419	C	T	ENST00000457016.1:c.1408+731C>T	5:g.112158419C>T	APC	intron_variant	0.044	No explanation	No explanation
+X	31279418	T	C	ENST00000357033.4:c.9225-285A>G	X:g.31279418T>C	DMD	intron_variant	0.043	Activate cryptic donor	Not possible to check
+11	47354550	A	C	ENST00000545968.1:c.3331-26T>G	11:g.47354550A>C	MYBPC3	intron_variant	0.043	Activate cryptic donor	Incorrect
+X	9711844	A	C	ENST00000467482.1:c.659-131T>G	X:g.9711844A>C	GPR143	intron_variant	0.043	New splice donor	Not possible to check
+1	94511126	A	T	ENST00000370225.3:c.2919-826T>A	1:g.94511126A>T	ABCA4	intron_variant	0.042	Activate cryptic donor	Incorrect
+4	56284334	G	A	ENST00000381334.5:c.792+182G>A	4:g.56284334G>A	TMEM165	intron_variant	0.042	Activate cryptic donor	Incorrect
+18	77470825	C	T	ENST00000299543.7:c.863+389C>T	18:g.77470825C>T	CTDP1	intron_variant	0.038	No explanation	No explanation
+7	117229521	A	G	ENST00000003084.6:c.1680-886A>G	7:g.117229521A>G	CFTR	intron_variant	0.036	New splice donor	Incorrect
+1	94525509	T	C	ENST00000370225.3:c.2160+584A>G	1:g.94525509T>C	ABCA4	intron_variant	0.036	New splice donor	Not possible to check
+16	89577853	A	G	ENST00000268704.2:c.286+853A>G	16:g.89577853A>G	SPG7	intron_variant	0.03	No explanation	No explanation
+12	48380015	A	C	ENST00000380518.3:c.1527+104T>G	12:g.48380015A>C	COL2A1	intron_variant	0.028	New splice donor	Not possible to check
+X	20191268	A	C	ENST00000379565.3:c.1228-279T>G	X:g.20191268A>C	RPS6KA3	intron_variant	0.026	No explanation	No explanation
+22	50502853	A	C	ENST00000311597.5:c.895-226T>G	22:g.50502853A>C	MLC1	intron_variant	0.026	New splice donor	Not possible to check
+X	154131652	G	A	ENST00000360256.4:c.5998+529C>T	X:g.154131652G>A	F8	intron_variant	0.026	No explanation	No explanation
+3	132436749	G	C	ENST00000337331.5:c.671-996C>G	3:g.132436749G>C	NPHP3	intron_variant	0.026	Activate cryptic donor	Incorrect
+4	17500790	T	C	ENST00000281243.5:c.436+2552A>G	4:g.17500790T>C	QDPR	intron_variant	0.025	No explanation	No explanation
+5	178414570	A	AT	ENST00000231188.5:c.1355-587dup	5:g.178414571dup	GRM6	intron_variant	0.024	No explanation	No explanation
+5	37012396	C	T	ENST00000282516.8:c.4560+2069C>T	5:g.37012396C>T	NIPBL	intron_variant	0.023	No explanation	No explanation
+5	112158423	A	T	ENST00000457016.1:c.1408+735A>T	5:g.112158423A>T	APC	intron_variant	0.023	No explanation	No explanation
+18	21114305	T	A	ENST00000269228.5:c.3591+105A>T	18:g.21114305T>A	NPC1	intron_variant	0.022	New splice donor	Correct
+X	153641699	G	A	ENST00000299328.5:c.284+110G>A	X:g.153641699G>A	TAZ	intron_variant	0.021	Activate cryptic donor	Not possible to check
+14	21793624	A	G	ENST00000400017.2:c.2367+82A>G	14:g.21793624A>G	RPGRIP1	intron_variant	0.021	New splice donor	Incorrect
+17	29580296	A	G	ENST00000358273.4:c.4173+278A>G	17:g.29580296A>G	NF1	intron_variant	0.021	No explanation	No explanation
+X	135737600	A	T	ENST00000370629.2:c.347-915A>T	X:g.135737600A>T	CD40LG	intron_variant	0.02	New splice donor	Not possible to check
+3	193362516	A	G	ENST00000361908.3:c.1554+622A>G	3:g.193362516A>G	OPA1	intron_variant	0.02	No explanation	No explanation
+2	227952667	A	T	ENST00000396625.3:c.1623+702T>A	2:g.227952667A>T	COL4A4	intron_variant	0.02	Activate cryptic donor	Incorrect
+12	6182667	A	C	ENST00000261405.5:c.997+118T>G	12:g.6182667A>C	VWF	intron_variant	0.019	New splice donor	Correct
+6	35477388	C	T	ENST00000229771.6:c.718+23G>A	6:g.35477388C>T	TULP1	intron_variant	0.017	Activate cryptic donor	Incorrect
+1	94493895	G	A	ENST00000370225.3:c.4539+1106C>T	1:g.94493895G>A	ABCA4	intron_variant	0.017	Activate cryptic donor	Incorrect
+8	96048588	C	T	ENST00000396124.4:c.420+784C>T	8:g.96048588C>T	NDUFAF6	intron_variant	0.017	Activate cryptic acceptor	Incorrect
+X	149831329	A	G	ENST00000370396.2:c.1468-577A>G	X:g.149831329A>G	MTM1	intron_variant	0.017	No explanation	No explanation
+X	33032666	A	T	ENST00000357033.4:c.93+5590T>A	X:g.33032666A>T	DMD	intron_variant	0.016	New splice acceptor 	Not possible to check
+11	108141209	GGTAA	G	ENST00000278616.4:c.2839-579_2839-576del	11:g.108141212_108141215del	ATM	intron_variant	0.016	Activate cryptic donor	Not possible to check
+X	153787731	C	T	ENST00000369609.5:c.722+866C>T	X:g.153787731C>T	IKBKG	intron_variant	0.016	No explanation	No explanation
+1	216039721	G	A	ENST00000307340.3:c.8845+628C>T	1:g.216039721G>A	USH2A	intron_variant	0.016	No explanation	No explanation
+12	103248546	A	G	ENST00000553106.1:c.706+368T>C	12:g.103248546A>G	PAH	intron_variant	0.016	No explanation	No explanation
+X	32470726	C	G	ENST00000357033.4:c.3603+2053G>C	X:g.32470726C>G	DMD	intron_variant	0.016	No explanation	No explanation
