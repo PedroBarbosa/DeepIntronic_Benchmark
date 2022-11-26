@@ -1,2 +1,0 @@
-##INFO=<ID=maxentscan_3,Number=.,Type=String,Description="DIFF SNV effect prediction. 
-##INFO=<ID=maxentscan_5,Number=.,Type=String,Description="DIFF SNV effect prediction.

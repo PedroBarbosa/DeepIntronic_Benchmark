@@ -13,7 +13,7 @@ Pangolin	Pangolin
 SPiP	SPiP
 MLCsplice	MLCsplice
 SQUIRLS	SQUIRLS_SCORE
-#MaxEntScan(Sliding)	MaxEntScan	>	3	Splicing
+AbSplice-DNA	AbSplice_DNA
 DSSP	DSSP	>	0.5	Splicing
 SpliceRover	SpliceRover	>	0.5	Splicing	conspliceml_like
 Spliceator	Spliceator	>	0.5	Splicing	conspliceml_like

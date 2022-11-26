@@ -61,3 +61,9 @@ major_tissues <- replace(major_tissues, major_tissues=="Whole", "Blood")
 major_tissues <- replace(major_tissues, major_tissues=="Cells", "Cultured_cells")
 major_tissues <- replace(major_tissues, major_tissues=="Small", "Small_Intestine")
 major_tissues <- replace(major_tissues, major_tissues=="Minor", "Minor_Salivary_Gland")
+
+eye_retina_diseases <- c("Achromatopsia", "Choroideremia", "Cone-rod dystrophy",
+                         "FRMD7-related infantile nystagmus", "Gyrate atrophy of choroid and retina",
+                         "Leber congenital amaurosis", "Ocular albinism", "Oguchi disease", "Optic atrophy", "Photoreceptor Dystrophy",
+                         "Retinal dystrophy", "Retinitis pigmentosa", "Stargardt disease",
+                         "Retinoblastoma", "Stargardt disease", "Usher syndrome")

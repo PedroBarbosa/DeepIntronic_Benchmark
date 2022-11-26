@@ -12,6 +12,7 @@ Pangolin	Pangolin
 SPiP	SPiP
 SQUIRLS	SQUIRLS_SCORE
 MLCsplice	MLCsplice
+AbSplice-DNA	AbSplice_DNA
 HEXplorer	HEXplorer	>	14	Splicing	conspliceml_like
 ESRseq	ESRseq	>	0.5	Splicing
 #ESEFinder	ESEfinder	>

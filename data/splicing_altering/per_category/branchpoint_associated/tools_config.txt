@@ -12,6 +12,7 @@ CI-SpliceAI	CI-SpliceAI
 Pangolin	Pangolin
 SPiP	SPiP
 SQUIRLS	SQUIRLS_SCORE
+AbSplice-DNA	AbSplice_DNA
 MLCsplice	MLCsplice
 labranchoR	labranchoR
 SVM_BP_finder	SVM_BP_finder	>	0.136	Splicing
