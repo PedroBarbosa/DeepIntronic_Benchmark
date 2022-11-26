@@ -13,5 +13,6 @@ SPiP	SPiP
 MLCsplice	MLCsplice
 SQUIRLS	SQUIRLS_SCORE
 AbSplice-DNA	AbSplice_DNA
+regSNP-intron	regSNP_intron	>	0.56	Splicing	conspliceml_like
 SpliceRover	SpliceRover	>	0.5	Splicing	conspliceml_like
 Spliceator	Spliceator	>	0.5	Splicing	conspliceml_like

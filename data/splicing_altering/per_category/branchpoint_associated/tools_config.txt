@@ -15,6 +15,7 @@ SQUIRLS	SQUIRLS_SCORE
 AbSplice-DNA	AbSplice_DNA
 MLCsplice	MLCsplice
 labranchoR	labranchoR
+regSNP-intron	regSNP_intron	>	0.56	Splicing	conspliceml_like
 SVM_BP_finder	SVM_BP_finder	>	0.136	Splicing
 BPP	BPP	>	0.0006	Splicing
 BPHunter	BPHunter	>	3	Splicing
