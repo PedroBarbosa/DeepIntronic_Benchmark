@@ -33,7 +33,7 @@ pseudoexon_new_acceptor <- pseudoexon %>% filter(Effect_category == 'new_splice_
 pseudoexon_donor_associated <- pseudoexon %>% filter(Effect_category == 'strengthening_donor')
 pseudoexon_acceptor_associated <- pseudoexon %>% filter(Effect_category == 'strengthening_acceptor')
 pseudoexon_branchpoint <- pseudoexon %>% filter(Effect_category == 'branchpoint_associated')
-pseudoexon$offset <- unlist(lapply(df$HGVSc, function(x) as.integer(sub("[A-Z>A-Z ]+", "", sub(".*[+-]", "", x)))))
+pseudoexon$offset <- unlist(lapply(pseudoexon$HGVSc, function(x) as.integer(sub("[A-Z>A-Z ]+", "", sub(".*[+-]", "", x)))))
 
 # write.table(pseudoexon_sre$POS, file ='../data/splicing_altering/per_category/pseudoexon_activation/sre_associated/position_positive.txt', 
 #           quote = F,

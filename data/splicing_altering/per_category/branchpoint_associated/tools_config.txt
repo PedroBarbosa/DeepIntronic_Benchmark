@@ -1,20 +1,19 @@
+SQUIRLS	SQUIRLS_SCORE	>	0.016	Splicing
+SpliceAI	SpliceAI,SpliceAI_ind	>	0.05	Splicing
+TraP	TraP	>	0.062	Splicing
+ConSpliceML	ConSpliceML	>	0.07	Splicing
+CI-SpliceAI	CI-SpliceAI	>	0.02	Splicing
+Pangolin	Pangolin	>	0.053	Splicing
+SPiP	SPiP	>	0.009	Splicing
+AbSplice-DNA	AbSplice_DNA	>	0.004	Splicing
 IntSplice2	IntSplice2
-HAL	HAL_DIFF
 SPIDEX	dpsi_zscore
 dbscSNV	ada_score,rf_score
-SpliceAI	SpliceAI,SpliceAI_ind
 S-CAP	SCAP
-TraP	TraP
-ConSpliceML	ConSpliceML
 MMSplice	mmsplice_deltaPSI
 kipoiSplice4	kipoisplice_4
-CI-SpliceAI	CI-SpliceAI
-Pangolin	Pangolin
-SPiP	SPiP
-SQUIRLS	SQUIRLS_SCORE
-AbSplice-DNA	AbSplice_DNA
 MLCsplice	MLCsplice
-labranchoR	labranchoR
+LaBranchoR	labranchoR
 regSNP-intron	regSNP_intron	>	0.56	Splicing	conspliceml_like
 SVM_BP_finder	SVM_BP_finder	>	0.136	Splicing
 BPP	BPP	>	0.0006	Splicing

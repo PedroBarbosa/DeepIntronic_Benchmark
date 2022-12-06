@@ -1,0 +1,213 @@
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(purrr)
+library(tidyr)
+library(stringr)
+library(dutchmasters)
+
+setwd("~/git_repos/paper_intronic_benchmark/scripts")
+
+# Manual curation files
+list_files <- list(pbarbosa = '../data/splicing_altering/per_study/pbarbosa_and_vazDrago2017/pbarbosa_tabular.tsv',
+                   vazDrago = '../data/splicing_altering/per_study/pbarbosa_and_vazDrago2017/vazDrago_tabular.tsv')
+
+curation <- map2_df(list_files, 
+                    names(list_files),
+                    ~read_tsv(.x) %>% 
+                      mutate(`#CHROM` = as.character(`#CHROM`),
+                             POS = as.integer(POS)))
+
+
+#####################
+###### SPiP #########
+#####################
+# Correct SPiP predictions
+spip <- read_tsv('../data/manual_curation/2_interpretability/spip/SPiP_data.tsv')
+
+
+# Join data
+spip <- left_join(spip, curation %>% select(HGVSg, 
+                                            Effect_category,
+                                            Functional_consequence), 
+                  by = 'HGVSg')
+
+# Get interpretation and score columns
+spip <- spip %>% separate(SPiP, into=c(NA, NA, "Interpretation", "CI", "Score", NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, "Region", "Extra"), 
+                          extra = 'merge', 
+                          sep = "[|]") %>% select(-Extra)
+
+spip <- spip %>% filter(!is.na(Effect_category))
+spip <- spip %>% mutate(Score=as.numeric(Score))
+
+pseudoexon <- spip %>% filter(str_detect(Functional_consequence, 'pseudoexon'))
+pseudoexon$group <- "Pseudoexon activation"
+exon_extension <- spip %>% filter((!str_detect(Functional_consequence, 'pseudoexon')) & (str_detect(Functional_consequence, 'exon_extension') | 
+                                                                                         str_detect(Functional_consequence, 'intron_retention')))
+exon_extension$group <- "Partial intron retention"
+
+spip <- bind_rows(pseudoexon, exon_extension)
+counts_spip <- spip %>% group_by(Interpretation, Effect_category, group) %>% tally()
+
+assign_spip_category <- function(row){
+  spip_ <- row[['Interpretation']]
+  true_label <- row[['Effect_category']]
+  group <- row[['group']]
+
+  if(spip_ == "NTR"){
+    return('No explanation')
+  }
+  else if(spip_ == "Alter BP" && true_label == "branchpoint_associated"){
+    return('Correct')
+  }
+  else if(spip_ == "Alter BP"){
+    return('Incorrect')
+  }
+  else if(spip_ == "Alter by complex event"){
+    return('Not informative')
+  }
+  else if(spip_ == "Alter by create New Exon" & group == "Pseudoexon activation"){
+    return('Correct')
+  }
+  else if(spip_ == "Alter by create New Exon"){
+    return('Incorrect')
+  }
+  else if(grepl('Alter by create New splice site', spip_) & true_label %in% c("new_splice_acceptor", 
+                                                                                  "new_splice_donor",
+                                                                                  "strengthening_donor",
+                                                                                  "strengthening_acceptor")){
+    return('Correct')
+  }
+  else if(grepl('Alter by create New splice site', spip_)){
+    return('Incorrect')
+  }
+  else if(spip_ == "Alter ESR" & true_label == "change_sre"){
+    return('Correct')
+  }
+  else if(spip_ == "Alter ESR"){
+    return('Incorrect')
+  }
+  else if(grepl('Alter by MES', spip_) & true_label %in% c("strengthening_acceptor", 
+                                                          "weakening_acceptor")){
+    return('Correct')
+  }
+  else if(grepl('Alter by MES', spip_)){
+    return('Incorrect')
+  }
+  else{
+   return('Never seen') 
+  }
+  
+}
+
+spip$final_interpretation <- apply(spip, 1, assign_spip_category)
+# counts_spip$final_interpretation <- apply(counts_spip, 1, assign_spip_category)
+# counts_spip <- counts_spip[rep(seq(nrow(counts_spip)), counts_spip$n),]
+# counts_spip <- counts_spip %>% select(-n)
+
+#####################
+###### SQUIRLS#######
+#####################
+# Correct SQUIRLS predictions
+squirls <- read_tsv('../data/manual_curation/2_interpretability/squirls/SQUIRLS_data.tsv')
+
+
+# Join data
+squirls <- left_join(squirls, curation %>% select(HGVSg, 
+                                            Effect_category,
+                                            Functional_consequence), 
+                  by = 'HGVSg')
+
+squirls <- squirls %>% filter(!is.na(Effect_category))
+
+pseudoexon <- squirls %>% filter(str_detect(Functional_consequence, 'pseudoexon'))
+pseudoexon$group <- "Pseudoexon activation"
+exon_extension <- squirls %>% filter((!str_detect(Functional_consequence, 'pseudoexon')) & (str_detect(Functional_consequence, 'exon_extension') | 
+                                                                                           str_detect(Functional_consequence, 'intron_retention')))
+exon_extension$group <- "Partial intron retention"
+
+squirls <- bind_rows(pseudoexon, exon_extension)
+counts_squirls <- squirls %>% group_by(SQUIRLS_interpretation, SQUIRLS_n_bases_info, Effect_category, group) %>% tally()
+
+assign_squirls_category <- function(row){
+  squirls_ <- row[['SQUIRLS_interpretation']]
+  true_label <- row[['Effect_category']]
+  group <- row[['group']]
+  
+  if(squirls_ == "No explanation"){
+    return('No explanation')
+  }
+  else if(squirls_ == "Not informative"){
+    return('Not informative')
+  }
+  else if(squirls_ == "New splice donor" && true_label == "new_splice_donor"){
+    return('Correct')
+  }
+  else if(squirls_ == "New splice donor"){
+    return('Incorrect')
+  }
+  else if(squirls_ == "New splice acceptor" & true_label == "new_splice_acceptor"){
+    return('Correct')
+  }
+  else if(squirls_ == "New splice acceptor"){
+    return('Incorrect')
+  }
+  else if(squirls_ == "Activate cryptic donor" & true_label == "strengthening_donor"){
+    return('Correct')
+  }
+  else if(squirls_ == "Activate cryptic donor"){
+    return('Incorrect')
+  }
+  else if(squirls_ == "Activate cryptic acceptor" & true_label == "strengthening_acceptor"){
+    return('Correct')
+  }
+  else if(squirls_ == "Activate cryptic acceptor"){
+    return('Incorrect')
+  }
+  else{
+    return('Never seen') 
+  }
+}
+
+squirls$final_interpretation <- apply(squirls, 1, assign_squirls_category)
+# counts_squirls$final_interpretation <- apply(counts_squirls, 1, assign_squirls_category)
+# counts_squirls <- counts_squirls[rep(seq(nrow(counts_squirls)), counts_squirls$n),]
+# counts_squirls <- counts_squirls %>% select(-n)
+
+
+###############################
+### Plotting tools together ###
+##############################
+spip_simple <- spip %>% select(c(Score, group, final_interpretation))
+spip_simple$tool <- "SPiP"
+colnames(spip_simple)[1] <- 'score'
+squirls_simple <- squirls %>% select(c(`SQUIRLS (>0.016)`, group, final_interpretation))
+squirls_simple$tool <- "SQUIRLS"
+colnames(squirls_simple)[1] <- 'score'
+
+#f <- df %>%mutate_all(funs(str_replace(., "No explanation", "Absent")))
+df <- bind_rows(spip_simple, squirls_simple)
+
+df %>% ggplot(aes(tool, fill=final_interpretation)) + 
+  geom_bar(position="fill", stat="count", colour="black") + 
+  scale_fill_dutchmasters(palette = "pearl_earring") +
+  ylab('Fraction of explanations') +
+  xlab('') +
+  theme(legend.title = element_blank(), 
+        axis.text.y = element_text(size=11),
+        axis.text.x = element_text(size=12),
+        axis.title.y = element_text(size=14),
+        legend.text=element_text(size=10))
+
+df %>% ggplot(aes(tool, score, fill=final_interpretation)) + 
+  geom_boxplot(alpha=0.9, outlier.shape=NA, position = position_dodge(width = 0.8)) +
+  geom_jitter(position = position_jitterdodge(jitter.width = 0.1),
+             aes(fill = final_interpretation), pch = 21) +
+  scale_fill_dutchmasters(palette = "pearl_earring") +
+  ylab('Prediction score') +
+  xlab('') +
+  theme_classic() +
+  theme(axis.text.y = element_text(size=11),
+        axis.text.x = element_text(size=12),
+        axis.title.y = element_text(size=14),
+        legend.text=element_text(size=10))
