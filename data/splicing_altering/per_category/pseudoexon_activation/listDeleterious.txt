@@ -1,4 +1,4 @@
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/sre_associated/deleterious.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/exonic_like/deleterious.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/acceptor_associated/deleterious.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/new_donor/deleterious.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/donor_downstream/deleterious.vcf.gz

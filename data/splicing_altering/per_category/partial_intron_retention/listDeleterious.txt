@@ -1,4 +1,4 @@
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/partial_intron_retention/sre_associated/deleterious.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/partial_intron_retention/exonic_like/deleterious.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/partial_intron_retention/acceptor_associated/deleterious.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/partial_intron_retention/new_donor/deleterious.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/partial_intron_retention/donor_downstream/deleterious.vcf.gz

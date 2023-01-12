@@ -1,1 +1,0 @@
-../../per_study/all_combined/sre_pos.txt

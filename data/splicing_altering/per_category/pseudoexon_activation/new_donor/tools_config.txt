@@ -1,19 +1,19 @@
 HAL	HAL_DIFF
 SPIDEX	dpsi_zscore
 dbscSNV	ada_score,rf_score
-SpliceAI	SpliceAI,SpliceAI_ind
 S-CAP	SCAP
-TraP	TraP
-ConSpliceML	ConSpliceML
 MMSplice	mmsplice_deltaPSI
 kipoiSplice4	kipoisplice_4
-CI-SpliceAI	CI-SpliceAI
-Pangolin	Pangolin
-SPiP	SPiP
 MLCsplice	MLCsplice
-SQUIRLS	SQUIRLS_SCORE
-AbSplice-DNA	AbSplice_DNA
 regSNP-intron	regSNP_intron	>	0.56	Splicing	conspliceml_like
 DSSP	DSSP	>	0.5	Splicing
 SpliceRover	SpliceRover	>	0.5	Splicing	conspliceml_like
 Spliceator	Spliceator	>	0.5	Splicing	conspliceml_like
+SQUIRLS	SQUIRLS_SCORE	>	0.016	Splicing
+SpliceAI	SpliceAI,SpliceAI_ind	>	0.05	Splicing
+TraP	TraP	>	0.062	Splicing
+ConSpliceML	ConSpliceML	>	0.07	Splicing
+CI-SpliceAI	CI-SpliceAI	>	0.02	Splicing
+Pangolin	Pangolin	>	0.053	Splicing
+SPiP	SPiP	>	0.009	Splicing
+AbSplice-DNA	AbSplice_DNA	>	0.004	Splicing

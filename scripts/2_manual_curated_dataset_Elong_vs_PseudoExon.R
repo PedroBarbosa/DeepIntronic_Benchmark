@@ -144,10 +144,10 @@ df_pathogenic %>% drop_na(offset) %>%
 #######################################
 ### Compare performance PE vs Elong ###
 #######################################
-pe <- read_tsv("pe_activation/statistics_all_types_all.tsv")
+pe <- read_tsv("pseudoexon_activation/statistics_all_types_all.tsv")
 pe$analysis <- 'Pseudoexon activation'
-retent <- read_tsv("exon_elongation/statistics_all_types_all.tsv")
-retent$analysis <- 'Partial intron retenion'
+retent <- read_tsv("partial_intron_retention/statistics_all_types_all.tsv")
+retent$analysis <- 'Partial intron retention'
 df <- bind_rows(pe, retent)
 df$tool = factor(df$tool, levels = df %>% filter(analysis != "Pseudoexon activation") %>% arrange(-weighted_norm_mcc) %>% pull(tool))
 
@@ -189,7 +189,7 @@ ggplot(df, aes(x = analysis, y=fraction_nan)) +
 
 
 ggplot(df, aes(x = analysis, y=weighted_norm_mcc)) + 
-  geom_boxplot(fill = 'antiquewhite2', alpha=0.6) +
+  geom_boxplot(fill = 'antiquewhite2', outlier.shape = NA, alpha=0.6) +
   geom_point(aes(fill=tool, group=tool), alpha=0.8, size=3.5, shape=21, position = position_dodge(0.2)) +
   geom_line(aes(group=tool), linetype = "dashed", size = 0.25, position = position_dodge(0.2)) + 
   stat_compare_means(paired = T, method = 'wilcox.test', label.x = 1.4, label.y = 0.95) +
@@ -198,7 +198,7 @@ ggplot(df, aes(x = analysis, y=weighted_norm_mcc)) +
   ylim(0.6,1) +
   theme(legend.title=element_blank(),
         axis.text.y = element_text(size=13),
-        axis.text.x = element_text(size=13),
+        axis.text.x = element_text(size=11),
         axis.title.x = element_text(size=14),
         axis.title.y = element_text(size=14),
         axis.line = element_line(colour = "black"),

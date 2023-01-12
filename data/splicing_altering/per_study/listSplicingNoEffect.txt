@@ -1,0 +1,8 @@
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/moles_fernandez_2021/moles_fernandez_2021_no_splicing_effect.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/cheung_2019_MFASS/cheung_2019_py_tract.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/cheung_2019_MFASS/cheung_2019_downstream.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/cheung_2019_MFASS/cheung_2019_branchpoint.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/adamson_2018_Vex_seq/adamson_2018_intronic_no_splicing_effect.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/adamson_2018_Vex_seq/adamson_2018_exonic_no_splicing_effect.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/neutral_gnomAD/new_donor_neutral.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/neutral_gnomAD/new_acceptor_neutral.vcf.gz

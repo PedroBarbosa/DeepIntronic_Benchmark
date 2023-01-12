@@ -21,7 +21,7 @@ list_files <- list(pbarbosa = '../data/splicing_altering/per_study/pbarbosa_and_
 df <- map2_df(list_files, 
         names(list_files),
         ~read_tsv(.x) %>% 
-          select(-any_of(c('Phenotype (OMIM)', 'Gene_ID', 'Gene_name', 'Intron_number', 'gnomADg_AF'))) %>%
+          select(-any_of(c('Phenotype (OMIM)', 'Intron_number', 'gnomADg_AF'))) %>%
           mutate(`#CHROM` = as.character(`#CHROM`),
                  POS = as.integer(POS)))
 
@@ -66,7 +66,7 @@ exon_extension_new_donor <- exon_extension %>% filter(Effect_category == 'new_sp
 exon_extension_donor_associated <- exon_extension %>% filter(Effect_category == 'strengthening_donor')
 exon_extension_new_acceptor <- exon_extension %>% filter(Effect_category == 'new_splice_acceptor')
 exon_extension_acceptor_associated <- exon_extension %>% filter(Effect_category == 'strengthening_acceptor')
- 
+
 # write.table(exon_extension_sre$POS, file ='../data/splicing_altering/per_category/partial_intron_retention/sre_associated/position_positive.txt', 
 #             quote = F,
 #             row.names = F,
@@ -122,7 +122,7 @@ list_files_neutral <- list(moles_fernandez_neutral = '../data/splicing_altering/
 df_neutral <- map2_df(list_files_neutral, 
               names(list_files_neutral),
               ~read_tsv(.x) %>% 
-                select(-any_of(c('Gene_ID', 'Gene_name', 'Intron_number', 'Exon_number', 'gnomADg_AF'))) %>%
+                select(-any_of(c('Intron_number', 'Exon_number', 'gnomADg_AF'))) %>%
                 mutate(`#CHROM` = as.character(`#CHROM`),
                        POS = as.integer(POS)))
 

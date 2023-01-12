@@ -1,4 +1,4 @@
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/sre_associated/neutral.vcf.gz
+/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/exonic_like/neutral.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/acceptor_associated/neutral.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/new_donor/neutral.vcf.gz
 /Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_category/pseudoexon_activation/donor_downstream/neutral.vcf.gz

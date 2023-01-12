@@ -1,0 +1,2 @@
+- 5 deep intronic variants were removed after filtering VEP consequences for the associated genes (220 originally, 215 after VEP annotations)
+- For deep intronic variants, category was assigned running the script 'assign_category_deep_intronic.py' after running VEP. Then, all the sub-datasets could be generated accordingly

@@ -207,6 +207,7 @@ df %>% ggplot(aes(tool, score, fill=final_interpretation)) +
   ylab('Prediction score') +
   xlab('') +
   theme_classic() +
+  guides(fill=guide_legend(title="Explanation")) +
   theme(axis.text.y = element_text(size=11),
         axis.text.x = element_text(size=12),
         axis.title.y = element_text(size=14),

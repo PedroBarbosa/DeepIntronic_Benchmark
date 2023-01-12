@@ -7,7 +7,7 @@ library(tibble)
 library(stringr)
 library(ggpubr)
 
-setwd("~/git_repos/paper_intronic_benchmark/data/manual_curation/")
+setwd("/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_pathogenic_manual_curation/1_dataset_description")
 data <- read_tsv('manual_curated.tsv')
 data <- data %>% filter(Source == "pbarbosa_2022")
 
