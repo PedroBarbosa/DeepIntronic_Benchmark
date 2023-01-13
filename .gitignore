@@ -4,6 +4,8 @@
 
 # outputs
 out 
+**/*vcf.gz.tsv
+**/*vcf.tsv
 
 # vscode
 .vscode
