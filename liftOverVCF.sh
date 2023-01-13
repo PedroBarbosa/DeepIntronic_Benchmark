@@ -1,1 +1,0 @@
-/home/pedro.barbosa/git_repos/slurm_scripts/variants/utils/liftOverVCF.sh
