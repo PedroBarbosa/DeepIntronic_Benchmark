@@ -76,15 +76,16 @@ data %>% drop_na(intron_bin) %>%
 ##############################
 ### Nucleotide composition ###
 ##############################
-data$allele <- paste0(data$ref, ">", data$alt)
-
-data %>% drop_na(intron_bin) %>%
-  ggplot(aes(x = outcome, fill = allele)) + 
-  geom_bar(stat = "count", position = "fill", color = "black",size=0.5) +
-  facet_wrap(~intron_bin) +
-  scale_fill_brewer(palette = "Set3") +
-  ylab('Fraction') +
-  xlab('')
+# Need to fix alleles based on strand info
+# data$allele <- paste0(data$ref, ">", data$alt)
+# 
+# data %>% drop_na(intron_bin) %>%
+#   ggplot(aes(x = outcome, fill = allele)) + 
+#   geom_bar(stat = "count", position = "fill", color = "black",size=0.5) +
+#   facet_wrap(~intron_bin) +
+#   scale_fill_brewer(palette = "Set3") +
+#   ylab('Fraction') +
+#   xlab('')
   
 #############################
 ### 501-1000 and +1000bp ####
@@ -235,16 +236,16 @@ write.table(more_than_1_conseq_at_shorter_offset$HGVSc, file="data/clinvar/plus_
 ########### Upload VETA results ############
 ############################################
 
-out_exonic <- read_tsv("out/clinvar_plus_500_exonic/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_exonic <- read_tsv("out/out_clinvar_plus_500_exonic/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_exonic$analysis <- "Exonic"
 
-out_1_conseq <- read_tsv("out/clinvar_plus_500_intronic_1_conseq/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_1_conseq <- read_tsv("out/out_clinvar_plus_500_intronic_1_conseq/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_1_conseq$analysis <- "No other transcript"
 
-out_more_1_same_offset <- read_tsv("out/clinvar_plus_500_intronic_moreThan1Tx_same_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_more_1_same_offset <- read_tsv("out/out_clinvar_plus_500_intronic_moreThan1Tx_same_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_more_1_same_offset$analysis <- "> 1 transcript (same offset)"
 
-out_more_1_smaller_offset <- read_tsv("out/clinvar_plus_500_intronic_moreThan1Tx_smaller_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_more_1_smaller_offset <- read_tsv("out/out_clinvar_plus_500_intronic_moreThan1Tx_smaller_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_more_1_smaller_offset$analysis <- "> 1 transcript (smaller offset)"
 
 outt <- bind_rows(list(out_exonic, out_1_conseq, out_more_1_same_offset, out_more_1_smaller_offset)) %>% select(tool, weighted_F1, average_precision, fraction_nan, analysis)

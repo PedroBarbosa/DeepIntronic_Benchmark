@@ -58,8 +58,8 @@ tissues <- c("Adipose_Subcutaneous",
                  "Vagina",
                  "Whole_Blood")
 
-variants <- read_tsv('../data/manual_curation/3_tissue_specificity/manual_curated_with_closest_GTEx_tissue.tsv')
-absplice <- read_tsv('../data/manual_curation/3_tissue_specificity/AbSplice_DNA_data.tsv')
+variants <- read_tsv('../data/splicing_pathogenic_manual_curation/3_tissue_specificity/manual_curated_with_closest_GTEx_tissue.tsv')
+absplice <- read_tsv('../data/splicing_pathogenic_manual_curation/3_tissue_specificity/AbSplice_DNA_data.tsv')
 absplice_names <- c("Gene", tissues)
 
 left_join(variants, absplice) %>% write_tsv('~/Desktop/test.tsv')
@@ -280,7 +280,6 @@ hm <- Heatmap(data,
                              which='row',
                              col = list(single_tissue_assigned = c("True" = "lightsalmon2", "False" = "gray86")),
                              annotation_label = "Single major GTEx tissue associated",
-                             row.names = row.names(df),
                              border = T,
                              show_annotation_name = F) + 
   rowAnnotation(rn = anno_text(rownames(data)))

@@ -89,7 +89,7 @@ exon_extension_acceptor_associated <- exon_extension %>% filter(Effect_category 
 #             col.names = F)
 
 ## Others (most exon skipping) ##
-other <- setdiff(df, bind_rows(pseudoexon, exon_extension))
+other <- setdiff(df, bind_rows(pseudoexon %>% select(-offset), exon_extension))
 other <- other %>%
   filter(!if_any(c(Effect_category, Functional_consequence), is.na) &
          ! Effect_category == "-")
@@ -99,10 +99,10 @@ branchpoint_disruption <- other %>% filter(Effect_category == "branchpoint_assoc
 # Branchpoint-associated (inclues both pseudoexon-activating and exon-skipping|partial intron retention)
 branchpoint <- df %>% filter(Effect_category == "branchpoint_associated")
 
-write.table(branchpoint$POS, file ='../data/splicing_altering/per_category/branchpoint_associated/position_positive.txt', 
-            quote = F,
-            row.names = F,
-            col.names = F)
+# write.table(branchpoint$POS, file ='../data/splicing_altering/per_category/branchpoint_associated/position_positive.txt', 
+#             quote = F,
+#             row.names = F,
+#             col.names = F)
 
 
 skip <-df %>% filter(str_detect(Functional_consequence, "skipping"))
@@ -112,9 +112,9 @@ skip %>% group_by(Effect_category) %>% count()
 ##### Neutral #####
 ###################
 list_files_neutral <- list(moles_fernandez_neutral = '../data/splicing_altering/per_study/moles_fernandez_2021/moles_fernandez_2021_no_splicing_effect_tabular.tsv',
-                           adamson_neutral_exonic = '../data/splicing_altering/per_study/adamson_2018/adamson_2018_exonic_no_splicing_effect_tabular.tsv',
-                           adamson_neutral_intronic = '../data/splicing_altering/per_study/adamson_2018/adamson_2018_intronic_no_splicing_effect_tabular.tsv',
-                           cheung_neutral = '../data/splicing_altering/per_study/cheung_2019/cheung_2019_no_splicing_altering_tabular.tsv',
+                           adamson_neutral_exonic = '../data/splicing_altering/per_study/adamson_2018_Vex_seq/adamson_2018_exonic_no_splicing_effect_tabular.tsv',
+                           adamson_neutral_intronic = '../data/splicing_altering/per_study/adamson_2018_Vex_seq/adamson_2018_intronic_no_splicing_effect_tabular.tsv',
+                           cheung_neutral = '../data/splicing_altering/per_study/cheung_2019_MFASS/cheung_2019_no_splicing_altering_tabular.tsv',
                            new_donor_neutral = '/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/neutral_gnomAD/new_donor_neutral_tabular.tsv',
                            new_acceptor_neutral = '/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/neutral_gnomAD/new_acceptor_neutral_tabular.tsv')
 

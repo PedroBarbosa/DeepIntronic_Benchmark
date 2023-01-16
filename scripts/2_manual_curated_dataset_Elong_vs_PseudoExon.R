@@ -7,7 +7,8 @@ library(tibble)
 library(stringr)
 library(ggpubr)
 
-setwd("~/git_repos/paper_intronic_benchmark/data/manual_curation/")
+setwd("~/git_repos/paper_intronic_benchmark/data/splicing_pathogenic_manual_curation//")
+
 data_pathogenic <- read_tsv('manual_curated.tsv')
 data_benign <- read_tsv('benign.tsv')
 

@@ -23,7 +23,7 @@ curation <- map2_df(list_files,
 ###### SPiP #########
 #####################
 # Correct SPiP predictions
-spip <- read_tsv('../data/manual_curation/2_interpretability/spip/SPiP_data.tsv')
+spip <- read_tsv('../data/splicing_pathogenic_manual_curation/2_interpretability/spip/SPiP_data.tsv')
 
 
 # Join data
@@ -109,7 +109,7 @@ spip$final_interpretation <- apply(spip, 1, assign_spip_category)
 ###### SQUIRLS#######
 #####################
 # Correct SQUIRLS predictions
-squirls <- read_tsv('../data/manual_curation/2_interpretability/squirls/SQUIRLS_data.tsv')
+squirls <- read_tsv('../data/splicing_pathogenic_manual_curation/2_interpretability/squirls/SQUIRLS_data.tsv')
 
 
 # Join data
@@ -212,3 +212,4 @@ df %>% ggplot(aes(tool, score, fill=final_interpretation)) +
         axis.text.x = element_text(size=12),
         axis.title.y = element_text(size=14),
         legend.text=element_text(size=10))
+

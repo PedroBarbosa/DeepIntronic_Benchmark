@@ -74,7 +74,7 @@ ggplot(data, aes(gnomADg_AF)) +
 ###  Overlaps  ###
 ##################
 data <- read_tsv("overlaps.tsv")
-counts <- data %>% group_by(source) %>% summarize(n=n())
+counts <- data %>% group_by(source) %>% dplyr::summarize(n=n())
 
 our_curation = counts %>% filter(source == "pbarbosa") %>% pull(n)
 in_clinvar = counts %>% filter(source == "in_clinvar") %>% pull(n)

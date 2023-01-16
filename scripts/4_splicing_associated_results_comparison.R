@@ -15,11 +15,11 @@ list_files <- list(branchpoint = 'data/splicing_altering/per_category/branchpoin
                    pe_new_donor = 'data/splicing_altering/per_category/pseudoexon_activation/new_donor/statistics_all_types_all.tsv',
                    pe_donor_downstream = 'data/splicing_altering/per_category/pseudoexon_activation/donor_downstream/statistics_all_types_all.tsv',
                    pe_acceptor_associated = 'data/splicing_altering/per_category/pseudoexon_activation/acceptor_associated/statistics_all_types_all.tsv',
-                   pe_sre  = 'data/splicing_altering/per_category/pseudoexon_activation/sre_associated/statistics_all_types_all.tsv',
+                   pe_sre  = 'data/splicing_altering/per_category/pseudoexon_activation/exonic_like/statistics_all_types_all.tsv',
                    partial_ir_new_donor = 'data/splicing_altering/per_category/partial_intron_retention/new_donor/statistics_all_types_all.tsv',
                    partial_ir_donor_downstream = 'data/splicing_altering/per_category/partial_intron_retention/donor_downstream/statistics_all_types_all.tsv',
                    partial_ir_acceptor_associated = 'data/splicing_altering/per_category/partial_intron_retention/acceptor_associated/statistics_all_types_all.tsv',
-                   partial_ir_sre = 'data/splicing_altering/per_category/partial_intron_retention/sre_associated/statistics_all_types_all.tsv')
+                   partial_ir_sre = 'data/splicing_altering/per_category/partial_intron_retention/exonic_like/statistics_all_types_all.tsv')
 
 # Concatenate dzata
 df <- map2_df(list_files, 

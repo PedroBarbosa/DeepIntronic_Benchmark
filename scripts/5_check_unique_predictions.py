@@ -65,7 +65,7 @@ def plot_counts(counter, available_tools, exclude_tools, n_variants, just_delete
         plt.xticks(ticks=np.arange(0,max(counts) + 1), labels=np.arange(0,max(counts) + 1))
     #plt.xlabel('Number of variants correctly predicted by few tools (< {})'.format(n_tools))
     plt.tight_layout()
-    plt.savefig('test.pdf')
+    plt.savefig('out/n_variants.pdf')
     
 def main():
     parser = argparse.ArgumentParser(add_help=True)
