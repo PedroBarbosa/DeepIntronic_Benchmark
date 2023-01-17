@@ -1,3 +1,3 @@
 #! /bin/sh
 export BUILDAH_FORMAT=docker
-docker build . -t intronic_eval
+docker build . --no-cache -t intronic_eval
