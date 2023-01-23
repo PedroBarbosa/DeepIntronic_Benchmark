@@ -27,6 +27,7 @@ df <- map2_df(list_files,
               ~read_tsv(.x) %>% 
                 mutate(analysis = .y) %>% 
                 select(c('tool', 'norm_mcc', 'weighted_norm_mcc', 'weighted_F1', 'total_p', 'total_n',
+                         'tp', 'fp', 'tn', 'fn',
                          'fraction_nan', 'weighted_accuracy', 'auROC', 'average_precision', 'analysis'))) 
 to_heatmap <- df
 df <- df %>% drop_na()
@@ -93,6 +94,26 @@ ggplot(df, aes(x=reorder(tool, -average_precision, median), y=average_precision,
         legend.text = element_text(size=13)) +
   ylim(0.2, 1) +
   labs(x = '', y = 'Average Precision')
+
+# df_ = df %>% filter(tool == "SpliceAI") %>% filter(major_group == "New splice donor")
+# 
+# # Create the contingency table
+# #   | Pseudoexon Activation | Partial Intron Retention |
+# #---|-----------------------|-------------------------|
+# # A | TP1                   | FP1                      |
+# # B | FN1                   | TN1                      |
+# #---|-----------------------|-------------------------|
+# 
+# 
+# contingency_table <- matrix(c(TP1, FP1, FN1, TN1), nrow = 2, ncol = 2, byrow = TRUE)
+# colnames(contingency_table) <- c("Pseudoexon Activation", "Partial Intron Retention")
+# rownames(contingency_table) <- c("A", "B", "C")
+# 
+# # Perform the Fisher exact test
+# p_value <- fisher.test(contingency_table)$p.value
+# 
+# # Print the p-value
+# print(p_value)
 
 #####################################
 ########   All categories  ##########
