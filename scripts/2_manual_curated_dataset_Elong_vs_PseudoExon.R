@@ -7,9 +7,11 @@ library(tibble)
 library(stringr)
 library(ggpubr)
 
-setwd("~/git_repos/paper_intronic_benchmark/data/splicing_pathogenic_manual_curation//")
+setwd("~/git_repos/paper_intronic_benchmark/data/")
 
-data_pathogenic <- read_tsv('manual_curated.tsv')
+data_pathogenic_vazDrago <- read_tsv('splicing_altering/per_study/pbarbosa_and_vazDrago2017/vazDrago_tabular.tsv')
+data_pathogenic_pbarbosa <- read_tsv('splicing_altering/per_study/pbarbosa_and_vazDrago2017/pbarbosa_tabular.tsv')
+data_pathogenic <- bind_rows(data_pathogenic_pbarbosa, data_pathogenic_vazDrago)
 data_benign <- read_tsv('benign.tsv')
 
 ###############################
@@ -145,6 +147,7 @@ df_pathogenic %>% drop_na(offset) %>%
 #######################################
 ### Compare performance PE vs Elong ###
 #######################################
+setwd("~/git_repos/paper_intronic_benchmark/data/splicing_pathogenic_manual_curation/")
 pe <- read_tsv("pseudoexon_activation/statistics_all_types_all.tsv")
 pe$analysis <- 'Pseudoexon activation'
 retent <- read_tsv("partial_intron_retention/statistics_all_types_all.tsv")
@@ -193,7 +196,7 @@ ggplot(df, aes(x = analysis, y=weighted_norm_mcc)) +
   geom_boxplot(fill = 'antiquewhite2', outlier.shape = NA, alpha=0.6) +
   geom_point(aes(fill=tool, group=tool), alpha=0.8, size=3.5, shape=21, position = position_dodge(0.2)) +
   geom_line(aes(group=tool), linetype = "dashed", size = 0.25, position = position_dodge(0.2)) + 
-  stat_compare_means(paired = T, method = 'wilcox.test', label.x = 1.4, label.y = 0.95) +
+  stat_compare_means(paired = T, method = 'wilcox.test', method.args = list(alternative = "greater"), label.x = 1.4, label.y = 0.95) +
   scale_fill_manual(values =pal) +
   theme_bw() +
   ylim(0.6,1) +

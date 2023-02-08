@@ -89,11 +89,13 @@ names(v) <- c("Our curation",
              "In Clinvar & Pathogenic/Likely_pathogenic",
              "In gnomAD v2.1")
           
-barplot(v,
-        ylim = c(0, 180),
-        col = cols,
-        xaxt='n')
-legend(locator(1), legend = names(v),fill = cols)
+barplot(rev(v),
+        xlim = c(0, 180),
+        col = rev(cols),
+        yaxt='n',
+        horiz = T)
+
+legend(locator(1), legend = names(rev(v)),fill = rev(cols))
 
 # library(VennDiagram)
 # flog.threshold(ERROR)

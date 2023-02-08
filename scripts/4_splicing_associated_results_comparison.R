@@ -8,7 +8,7 @@ library(tibble)
 library(stringr)
 library(ggbump)
 library(forcats)
-
+library(broom)
 setwd("~/git_repos/paper_intronic_benchmark/")
 
 list_files <- list(branchpoint = 'data/splicing_altering/per_category/branchpoint_associated/statistics_all_types_all.tsv',
@@ -36,9 +36,9 @@ df$analysis <- factor(df$analysis, levels = c("branchpoint", "pe_acceptor_associ
                                               "partial_ir_acceptor_associated", "partial_ir_sre", "partial_ir_new_donor", "partial_ir_donor_downstream"))
 
 
-####################################
-########## Per class boxplot #######
-####################################
+#######################
+###### Boxplots #######
+#######################
 major_label_f <- function(x){
 
   if (grepl("acceptor", x)){
@@ -57,17 +57,21 @@ major_label_f <- function(x){
 
 pe <- df %>% filter(str_detect(analysis, "pe_"))
 pe$group <- 'Pseudoexon activation'
-pe$major_group <- sapply(pe$analysis, major_label_f)
+pe$region <- sapply(pe$analysis, major_label_f)
 
 partial_ir <- df %>% filter(str_detect(analysis, "partial_ir_"))
 partial_ir$group <- 'Partial intron retention'
-partial_ir$major_group <- sapply(partial_ir$analysis, major_label_f)
+partial_ir$region <- sapply(partial_ir$analysis, major_label_f)
 df <- bind_rows(pe, partial_ir)
-   
+
+###########################
+###### Per region #########
+###########################
 ggplot(df %>% filter(analysis != "branchpoint"), aes(x=group, y=average_precision,fill=group)) +
   geom_boxplot(alpha=0.5) + 
+  scale_fill_manual(values=c("#619CFF", "#F8766D")) +
   geom_point() +
-  facet_wrap(~major_group) + 
+  facet_wrap(~region) + 
   theme_bw() +
   theme(legend.title=element_blank(),
         axis.text.y = element_text(size=13),
@@ -81,42 +85,88 @@ ggplot(df %>% filter(analysis != "branchpoint"), aes(x=group, y=average_precisio
   ylim(0.2, 1) +
   labs(x = '', y = 'Average Precision')
 
-ggplot(df, aes(x=reorder(tool, -average_precision, median), y=average_precision, fill = group)) +
-  geom_boxplot(alpha=0.5, outlier.colour = NULL) + 
-  #geom_point(shape = 21) +
+########################
+###### Per tool ########
+########################
+fisher_test <- function(data){
+  if (nrow(data) == 1){
+    col_names <- c("estimate", "p.value", "conf.low", "conf.high", "method", "alternative", "tool", "region")
+    values <- c(NA, NA, NA, NA, NA, NA, data %>% pull(tool), data %>% pull(region))
+    fisher <- tibble(!!!setNames(values, nm = col_names)) %>% 
+      mutate_at(vars(estimate, p.value, conf.low, conf.high), as.double)
+    return(fisher)
+  }
+  else{
+    pe <- data %>% filter(group == "Pseudoexon activation")
+    pir <- data %>% filter(group == "Partial intron retention")
+    pe_success <- pe %>% pull(tp) + pe %>% pull(tn)
+    pe_failure <- pe %>% pull(fp) + pe %>% pull(fn)
+    pir_success <- pir %>% pull(tp) + pir %>% pull(tn)
+    pir_failure <- pir %>% pull(fp) + pir %>% pull(fn)
+    matrix <- matrix(c(pe_success, pe_failure, pir_success, pir_failure), nrow = 2)
+    fisher = tidy(fisher.test(matrix))
+    fisher$region = unique(data$region)
+    fisher$tool = unique(data$tool)
+    return(fisher)
+  }
+}
+
+fisher_df <- bind_rows(df %>% group_by(tool, region) %>% 
+  group_map(~fisher_test(.x), .keep = T))
+pval_corr <- fisher_df %>% filter(!is.na(p.value))
+pval_corr$p.adj <- p.adjust(pval_corr$p.value, method = "holm")
+fisher_df <- left_join(fisher_df, pval_corr)%>% left_join(color_df)
+
+table(pval_corr$p.value < 0.05)
+table(pval_corr$p.adj < 0.05)
+
+color_df <- data.frame(colors = c("coral4", "aquamarine4", "darkslateblue", "darkgrey"),
+                       region = c("Acceptor associated", "Donor downstream", "Exonic-like", "New splice donor"))
+
+df <- left_join(df, fisher_df %>% select(tool, region, p.value, p.adj, colors))
+
+df_ <- df %>% mutate(p.value = round(p.value, digits = 5))
+df_ <- df %>% mutate(p.adj = round(p.adj, digits = 5))
+df_ <- df_ %>% mutate(p.adj_lower_1 = ifelse(p.adj < 1, p.adj, ""))
+
+df_$p.value <- as.character(df_$p.value) 
+df_$p.adj <- as.character(df_$p.adj) 
+df_$p.adj_lower_1 <- as.character(df_$p.adj_lower_1) 
+
+df_ <- df_ %>% mutate(p.value = sub("^", "pval=", p.value))
+df_ <- df_ %>% mutate(p.adj = sub("^", "pval=", p.adj))
+df_ <- df_ %>% mutate(p.adj_lower_1 = ifelse(p.adj_lower_1 == "", "", sub("^", "p=", p.adj_lower_1)))
+
+df_$region <- factor(df_$region, levels = c("Acceptor associated", "Exonic-like", "New splice donor", "Donor downstream"))
+df_ <- df_ %>% filter(!is.na(p.value))
+
+ggplot(df_, aes(x=reorder(tool, -average_precision, median))) +
+  geom_boxplot(aes(x=group, y=average_precision, fill=group, alpha=0.5), outlier.shape=NA) + 
+  geom_point(aes(x=group, y=average_precision, fill = region), position = position_dodge(width=0.2), size=3, shape = 21)  +
+  scale_fill_manual(values=c("coral4", "aquamarine4", "darkslateblue", "darkgrey", "#619CFF", "#F8766D")) +
+  geom_text(data = subset(df_, region == "Acceptor associated"), aes(x = 1.5, y = 1.21, label = p.adj, color=colors), size = 2.5) +
+  geom_text(data = subset(df_, region == "Exonic-like"), aes(x = 1.5, y = 1.09, label = p.adj, color=colors), size = 2.5) +
+  geom_text(data = subset(df_, region == "New splice donor"), aes(x = 1.5, y = 1.03, label = p.adj, color=colors), size = 2.5) +
+  geom_text(data = subset(df_, region == "Donor downstream"), aes(x = 1.5, y = 1.15, label = p.adj, color=colors), size = 2.5) +
+  scale_colour_manual(values = c("aquamarine4", "coral4", "darkgrey", "darkslateblue")) +
+  facet_wrap(reorder(tool, -average_precision, median) ~ ., nrow=2) +
   theme_bw() +
+  ylim(0.2, 1.21) +
+  ylab('Average precision') +
   theme(legend.title=element_blank(),
         axis.text.y = element_text(size=13),
-        axis.text.x = element_text(size=13, angle = 75, vjust=0.5),
         axis.title.y = element_text(size=15),
         axis.line = element_line(colour = "black"),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank(),
+        strip.text.x = element_text(size=7),
         panel.background = element_blank(),
-        legend.text = element_text(size=13)) +
-  ylim(0.2, 1) +
-  labs(x = '', y = 'Average Precision')
+        legend.text = element_text(size=13)) 
 
-# df_ = df %>% filter(tool == "SpliceAI") %>% filter(major_group == "New splice donor")
-# 
-# # Create the contingency table
-# #   | Pseudoexon Activation | Partial Intron Retention |
-# #---|-----------------------|-------------------------|
-# # A | TP1                   | FP1                      |
-# # B | FN1                   | TN1                      |
-# #---|-----------------------|-------------------------|
-# 
-# 
-# contingency_table <- matrix(c(TP1, FP1, FN1, TN1), nrow = 2, ncol = 2, byrow = TRUE)
-# colnames(contingency_table) <- c("Pseudoexon Activation", "Partial Intron Retention")
-# rownames(contingency_table) <- c("A", "B", "C")
-# 
-# # Perform the Fisher exact test
-# p_value <- fisher.test(contingency_table)$p.value
-# 
-# # Print the p-value
-# print(p_value)
 
 #####################################
-########   All categories  ##########
+######## All regions together #######
 #####################################
 # Keep only tools that predict all categories
 pe_all <- pe %>% 
@@ -311,7 +361,7 @@ split <- rep(factor(c("bp", "acc", "sre", "new_don", "d_down"),
 #################################
 ##### Major group annotation ####
 #################################
-major_group_annot <- c("Branchpoint associated", rep(c("Pseudoexon activation", "Partial intron retention"), times=4))
+region_annot <- c("Branchpoint associated", rep(c("Pseudoexon activation", "Partial intron retention"), times=4))
 
 ht_opt$COLUMN_ANNO_PADDING = unit(0.2, "cm")
 
@@ -333,7 +383,7 @@ htmp <- Heatmap(
   column_title = NULL,
   top_annotation = HeatmapAnnotation(
     regions = regions_block,
-    "Major variant group" = major_group_annot,
+    "Region group" = region_annot,
     show_annotation_name = F,
     gap = unit(0.1, "cm"),
     border = T,
