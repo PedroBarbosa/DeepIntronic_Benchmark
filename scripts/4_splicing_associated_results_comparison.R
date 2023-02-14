@@ -272,8 +272,8 @@ fill_missing_analysis <- function(i){
   missing_tools <- setdiff(unique_tools, df_$tool)
   
   not_perfomed <- tibble(tool = missing_tools, 
-                           auROC = rep(c(-1), times = length(missing_tools)),
-                           average_precision = rep(c(-1), times = length(missing_tools)))
+                           auROC = rep(c(0.18), times = length(missing_tools)),
+                           average_precision = rep(c(0.18), times = length(missing_tools)))
   df_ <- bind_rows(df_, not_perfomed)
   df_$analysis <- group_name
   return(df_)
@@ -285,8 +285,8 @@ list_dfs <- to_heatmap %>%
 
 group_names <- sort(unique(to_heatmap$analysis))
 out <- lapply(seq_along(list_dfs), fill_missing_analysis) %>% bind_rows() %>%
-  mutate(auROC = replace_na(auROC, -2),
-         average_precision = replace_na(average_precision, -2))
+  mutate(auROC = replace_na(auROC, 0.19),
+         average_precision = replace_na(average_precision, 0.19))
 
 # Change MLCsplice and dbscSNV. They were run, but had all predictions missed, b
 # eing wrongly assigned to the "no run for variant region" class
@@ -315,6 +315,7 @@ out <-
   ))
 
 final_heat <- out %>% select(-auROC, -average_precision) %>% pivot_wider(names_from = analysis, values_from = average_precision_bins) %>% column_to_rownames(var = 'tool')
+final_heat <- out %>% select(-auROC, -average_precision_bins) %>% pivot_wider(names_from = analysis, values_from = average_precision) %>% column_to_rownames(var = 'tool')
 tool_order <- c("SpliceAI", "Pangolin", "CI-SpliceAI", "ConSpliceML", "AbSplice-DNA", "SPiP", "SQUIRLS", "TraP", "regSNP-intron", "MMSplice", "SPIDEX", "dbscSNV",
                 "kipoiSplice4", "MLCsplice", "HAL", "LaBranchoR", "BPP", "SVM_BP_finder", "BPHunter", "IntSplice2", "SpliceRover", "Spliceator", "DSSP", "HEXplorer", "ESRseq")
 col_order <- c("branchpoint", "pe_acceptor_associated", "partial_ir_acceptor_associated", "pe_sre",
@@ -322,48 +323,12 @@ col_order <- c("branchpoint", "pe_acceptor_associated", "partial_ir_acceptor_ass
                "partial_ir_donor_downstream")
 final_heat <- final_heat[tool_order,col_order]
 
-##################################
-##### Colors of Heatmap values ###
-##################################
-value_labels <- rev(c("Too many missing predictions",
-                  "Not run for variant region",
-                  "> 0",
-                  "> 0.1",
-                  "> 0.2",
-                  "> 0.3",
-                  "> 0.4",
-                  "> 0.5",
-                  "> 0.6",
-                  "> 0.7",
-                  "> 0.8",
-                  "> 0.9"))
-
-colfunc <- colorRampPalette(c("#0b253f", "#e2e8eb"))
-fill_labels <- c(colfunc(9))
-extra <- adjustcolor(c("black", "white", "darkgrey"), alpha.f = .9)
-fill_labels <- c(fill_labels, extra)
-#scales::show_col(c, ncol = 5, labels = FALSE)
-colors <- structure(fill_labels, names=value_labels)
-
-##################################
-### Variant regions annotation ###
-##################################
-labels <- c("BP", "Acceptor associated", "Exonic-like", "New splice donor", "Donor downstream")
-fill <- rep("lightgrey", times=5) #c("#D8E2DC", "#FFE5D9", "#FFCAD4", "#F4ACB7", "#9D8189")
-regions_block <- anno_block(gp = gpar(fill = fill),
-                                       labels = labels,
-                            labels_gp = gpar(col = 'black', fontsize = 8.75))
-
-split <- rep(factor(c("bp", "acc", "sre", "new_don", "d_down"), 
-                    levels = c("bp", "acc", "sre", "new_don", "d_down")), 
-             times=c(1, 2, 2, 2, 2))
-
-#################################
-##### Major group annotation ####
-#################################
-region_annot <- c("Branchpoint associated", rep(c("Pseudoexon activation", "Partial intron retention"), times=4))
-
-ht_opt$COLUMN_ANNO_PADDING = unit(0.2, "cm")
+library(circlize)
+ccc <- colorRampPalette(c("#0b253f", "#e2e8eb"))
+fill_labels <- c(ccc(35))[c(1,4,8,12,16,20,24,28, 32)]
+col_fun = colorRamp2(c(0.18, 0.19, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
+                     c("white", "#FFF4F4", fill_labels))
+                                  
 
 htmp <- Heatmap(
   final_heat,
@@ -373,7 +338,7 @@ htmp <- Heatmap(
   rect_gp = gpar(col = "black", lwd = 1),
   name = "Average precision",
   border = T,
-  col = colors,
+  col = col_fun,
   row_names_side = 'left',
   column_names_side = 'top',
   column_split = split,
@@ -381,22 +346,39 @@ htmp <- Heatmap(
   cluster_columns = F,
   show_column_names = F,
   column_title = NULL,
+  cell_fun = function(j, i, x, y, width, height, fill) {
+    v = pindex(final_heat, i, j)
+    l<-which(lapply(v,length)>0)
+    if (final_heat[i, j] > 0.2){
+      if(final_heat[i, j] > 0.7){
+        grid.text(sprintf("%.2f", final_heat[i, j]), x, y, gp = gpar(col="white", fontsize = 8))
+      }
+      else{
+        grid.text(sprintf("%.2f", final_heat[i, j]), x, y, gp = gpar(fontsize = 8))}
+    }
+  },
   top_annotation = HeatmapAnnotation(
     regions = regions_block,
-    "Region group" = region_annot,
+    "Major variant group" = region_annot,
     show_annotation_name = F,
     gap = unit(0.1, "cm"),
     border = T,
     simple_anno_size = unit(3, "mm"),
     col = list(
       "Major variant group" = c(
-        "Branchpoint associated" = "#E8F6EF",
-        "Pseudoexon activation" = "#f0cccc",
+        "Branchpoint associated" = "#A0DFDC",
+        "Pseudoexon activation" = "#EDBDBD",
         "Partial intron retention" = "#713030"
       )
     )
-  )
+  ),
 )
 
-draw(htmp,  merge_legend=T)
+lgd = Legend(
+  labels = c("Not run for variant region", "Too many missing predictions"), 
+  legend_gp = gpar(fill = c("white", "#FFF4F4")),
+  title = "", 
+  border = "black")
+
+draw(htmp,  merge_legend=T, annotation_legend_list = list(lgd))
 
