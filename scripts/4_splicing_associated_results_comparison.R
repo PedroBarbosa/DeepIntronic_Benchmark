@@ -290,8 +290,8 @@ out <- lapply(seq_along(list_dfs), fill_missing_analysis) %>% bind_rows() %>%
 
 # Change MLCsplice and dbscSNV. They were run, but had all predictions missed, b
 # eing wrongly assigned to the "no run for variant region" class
-out <-out %>% mutate(average_precision=case_when(tool=="MLCsplice" & analysis == "pe_new_donor" ~ -2,
-                                   tool=="dbscSNV" & analysis %in% c("pe_new_donor", "partial_ir_new_donor") ~ -2,
+out <-out %>% mutate(average_precision=case_when(tool=="MLCsplice" & analysis == "pe_new_donor" ~ 0.19,
+                                   tool=="dbscSNV" & analysis %in% c("pe_new_donor", "partial_ir_new_donor") ~ 0.19,
                                    TRUE ~ average_precision))
 
 out <-
@@ -323,12 +323,35 @@ col_order <- c("branchpoint", "pe_acceptor_associated", "partial_ir_acceptor_ass
                "partial_ir_donor_downstream")
 final_heat <- final_heat[tool_order,col_order]
 
+##################################
+### Variant regions annotation ###
+##################################
+labels <- c("BP", "Acceptor associated", "Exonic-like", "New splice donor", "Donor downstream")
+fill <- rep("grey90", times=5) #c("#D8E2DC", "#FFE5D9", "#FFCAD4", "#F4ACB7", "#9D8189")
+regions_block <- anno_block(gp = gpar(fill = fill),
+                            labels = labels,
+                            labels_gp = gpar(col = 'black', fontsize = 8.75))
+
+split <- rep(factor(c("bp", "acc", "sre", "new_don", "d_down"), 
+                    levels = c("bp", "acc", "sre", "new_don", "d_down")), 
+             times=c(1, 2, 2, 2, 2))
+
+################
+### Palette ####
+################
+# mypal <- carto.pal(pal1 = "pastel.pal", n1 = 10, transparency = F)
+# k <- length(mypal)
+# image(1:k, 1, as.matrix(1:k), col =mypal, xlab = paste(k," classes",sep=""),
+#       ylab = "", xaxt = "n", yaxt = "n",bty = "n")
 library(circlize)
 ccc <- colorRampPalette(c("#0b253f", "#e2e8eb"))
-fill_labels <- c(ccc(35))[c(1,4,8,12,16,20,24,28, 32)]
+fill_labels <- c(ccc(35))[c(1,4,8,12,16,20,24,28,32)]
 col_fun = colorRamp2(c(0.18, 0.19, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
-                     c("white", "#FFF4F4", fill_labels))
-                                  
+                     c(c("white", "#FFE8EA"), fill_labels))
+#library(cartography)
+#ccc <- carto.pal(pal1 = "blue.pal" ,n1 = 20, middle = TRUE, transparency = TRUE)[c(1,3,5,7,9,11,13,15,18)] 
+# col_fun = colorRamp2(c(0.18, 0.19, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
+#                      c(c("white", "#FFE8EA"), rev(ccc)))
 
 htmp <- Heatmap(
   final_heat,
@@ -350,7 +373,7 @@ htmp <- Heatmap(
     v = pindex(final_heat, i, j)
     l<-which(lapply(v,length)>0)
     if (final_heat[i, j] > 0.2){
-      if(final_heat[i, j] > 0.7){
+      if(final_heat[i, j] > 0.6){
         grid.text(sprintf("%.2f", final_heat[i, j]), x, y, gp = gpar(col="white", fontsize = 8))
       }
       else{
@@ -366,9 +389,9 @@ htmp <- Heatmap(
     simple_anno_size = unit(3, "mm"),
     col = list(
       "Major variant group" = c(
-        "Branchpoint associated" = "#A0DFDC",
-        "Pseudoexon activation" = "#EDBDBD",
-        "Partial intron retention" = "#713030"
+        "Branchpoint associated" = "#C99FC6",
+        "Pseudoexon activation" = "#8AAF96",
+        "Partial intron retention" = "#8A5946"
       )
     )
   ),
@@ -376,7 +399,7 @@ htmp <- Heatmap(
 
 lgd = Legend(
   labels = c("Not run for variant region", "Too many missing predictions"), 
-  legend_gp = gpar(fill = c("white", "#FFF4F4")),
+  legend_gp = gpar(fill = c("white", "#FFE8EA")),
   title = "", 
   border = "black")
 
