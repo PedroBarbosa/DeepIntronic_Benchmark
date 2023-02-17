@@ -1,4 +1,4 @@
-# Benchmark of human intronic variation
+# Benchmark of human deep intronic variation
 
 Repository with the data and code to reproduce the evaluation of computational methods to predict functional intronic variation.
 
