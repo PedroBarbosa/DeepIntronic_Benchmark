@@ -1,6 +1,7 @@
 # Benchmark of human deep intronic variation
 
-Repository with the data and code to reproduce the evaluation of computational methods to predict functional intronic variation.
+Repository with the data and code to reproduce the evaluation of computational methods to predict functional intronic variation described in the preprint:
+https://www.biorxiv.org/content/10.1101/2023.02.17.528928v1
 
 ## Datasets
 `data` folder contains all the datasets in the hg19 version used for all comparisons. VCF files are annotated with all prediction tools included.\
