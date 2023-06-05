@@ -3,7 +3,8 @@ SQUIRLS	SQUIRLS_SCORE	>	0.006	Splicing
 SpliceAI	SpliceAI,SpliceAI_ind	>	0.04	Splicing
 TraP	TraP	>	0.0	Splicing
 ConSpliceML	ConSpliceML	>	0.03	Splicing
-CI-SpliceAI	CI-SpliceAI	>	0.01	Splicing
+CI-SpliceAI	CI-SpliceAI	>	0.02	Splicing
 Pangolin	Pangolin	>	0.053	Splicing
 SPiP	SPiP	>	0.009	Splicing
+PDIVAS	PDIVAS	>	0.01	Splicing
 AbSplice-DNA	AbSplice_DNA	>	0.0	Splicing

@@ -1,11 +1,5 @@
 HAL	HAL_DIFF
-SPIDEX	dpsi_zscore
-dbscSNV	ada_score,rf_score
-S-CAP	SCAP
-MMSplice	mmsplice_deltaPSI
-kipoiSplice4	kipoisplice_4
-MLCsplice	MLCsplice
-regSNP-intron	regSNP_intron	>	0.56	Splicing	conspliceml_like
+MaxEntScan	MES-SWA_acceptor_diff,MES-SWA_donor_diff
 DSSP	DSSP	>	0.5	Splicing
 SpliceRover	SpliceRover	>	0.5	Splicing	conspliceml_like
 Spliceator	Spliceator	>	0.5	Splicing	conspliceml_like
@@ -17,3 +11,4 @@ CI-SpliceAI	CI-SpliceAI	>	0.02	Splicing
 Pangolin	Pangolin	>	0.053	Splicing
 SPiP	SPiP	>	0.009	Splicing
 AbSplice-DNA	AbSplice_DNA	>	0.004	Splicing
+PDIVAS	PDIVAS	>	0.01	Splicing

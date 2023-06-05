@@ -7,7 +7,7 @@
 X	32470726	C	G	ENSG00000198947	DMD	ENST00000357033.4:c.3603+2053G>C	X:g.32470726C>G	26/78	.	change_sre	pseudoexon_inclusion	Becker muscular dystrophy (300376)	vazDrago_2017
 X	100654735	C	T	ENSG00000102393	GLA	ENST00000218516.3:c.640-801G>A	X:g.100654735C>T	4/6	4.5296001189853996e-05	change_sre	pseudoexon_inclusion	Fabry disease (301500)	vazDrago_2017
 X	107813924	G	A	ENSG00000188153	COL4A5	ENST00000328300.6:c.385-719G>A	X:g.107813924G>A	6/52	.	change_sre	pseudoexon_inclusion	Alport Syndrome (301050)	vazDrago_2017
-11	67816907	G	A	ENSG00000110719	TCIRG1	ENST00000265686.3:c.1887+146G>A	11:g.67816907G>A	15/19	.	change_sre	exon_extension	Autosomal recessive osteopetrosis (259700)	vazDrago_2017
+11	67816907	G	A	ENSG00000110719	TCIRG1	ENST00000265686.3:c.1887+146G>A	11:g.67816907G>A	15/19	.	strengthening_donor	143bp_exon_extension	Autosomal recessive osteopetrosis (259700)	vazDrago_2017
 12	48380015	A	C	ENSG00000139219	COL2A1	ENST00000380518.3:c.1527+104T>G	12:g.48380015A>C	23/53	.	new_splice_acceptor	exon_extension	Stickler syndrome (108300)	vazDrago_2017
 3	193335986	G	A	ENSG00000198836	OPA1	ENST00000361908.3:c.557-672G>A	3:g.193335986G>A	4/29	.	new_splice_acceptor	pseudoexon_inclusion	Optic atrophy plus syndrome (125250)	vazDrago_2017
 3	193335990	G	A	ENSG00000198836	OPA1	ENST00000361908.3:c.557-668G>A	3:g.193335990G>A	4/29	.	new_splice_acceptor	pseudoexon_inclusion	Optic atrophy plus syndrome (125250)	vazDrago_2017
@@ -34,10 +34,10 @@ X	133628822	T	A	ENSG00000165704	HPRT1	ENST00000298556.7:c.485+1202T>A	X:g.133628
 4	17500790	T	C	ENSG00000151552	QDPR	ENST00000281243.5:c.436+2552A>G	4:g.17500790T>C	4/6	.	new_splice_donor	pseudoexon_inclusion	Hyperphenylalaninemia, BH4-deficient, C (261630)	vazDrago_2017
 4	108945190	G	T	ENSG00000138796	HADH	ENST00000603302.1:c.636+471G>T	4:g.108945190G>T	5/8	.	new_splice_donor	pseudoexon_inclusion	Hyperinsulinemic hypoglycemia (609975)	vazDrago_2017
 5	42700896	A	G	ENSG00000112964	GHR	ENST00000230882.4:c.618+792A>G	5:g.42700896A>G	6/9	.	new_splice_donor	pseudoexon_inclusion	Inherited growth-hormone insensitivity (604271)	vazDrago_2017
-5	112115546	G	A	ENSG00000134982	APC	ENST00000457016.1:c.532-941G>A	5:g.112115546G>A	5/15	.	new_splice_donor	pseudoexon_inclusion	Familial Adenomatous Polyposis (175100)	vazDrago_2017
+5	112115546	G	A	ENSG00000134982	APC	ENST00000457016.1:c.532-941G>A	5:g.112115546G>A	5/15	.	change_sre	pseudoexon_inclusion	Familial Adenomatous Polyposis (175100)	vazDrago_2017
 5	112158419	C	T	ENSG00000134982	APC	ENST00000457016.1:c.1408+731C>T	5:g.112158419C>T	11/15	.	new_splice_donor	pseudoexon_inclusion	Familial Adenomatous Polyposis (175100)	vazDrago_2017
-6	49404228	G	T	ENSG00000146085	MUT	ENST00000274813.3:c.1957-892C>A	6:g.49404228G>T	11/12	.	new_splice_donor	pseudoexon_inclusion	Methylmalonic aciduria (251000)	vazDrago_2017
-6	51746236	A	G	ENSG00000170927	PKHD1	ENST00000371117.3:c.7350+1655T>C	6:g.51746236A>G	46/66	.	new_splice_donor	pseudoexon_inclusion	Polycystic kidney and hepatic disease (263200)	vazDrago_2017
+6	49404228	G	T	ENSG00000146085	MUT	ENST00000274813.3:c.1957-892C>A	6:g.49404228G>T	11/12	.	strengthening_donor	pseudoexon_inclusion	Methylmalonic aciduria (251000)	vazDrago_2017
+6	51747238	T	C	ENSG00000170927	PKHD1	ENST00000340994.4:c.7350+653A>G	6:g.51747238T>C	46/66	.	new_splice_donor	116bp_pseudoexon_inclusion	Polycystic kidney and hepatic disease (263200)	vazDrago_2017
 6	76593963	T	G	ENSG00000196586	MYO6	ENST00000369977.3:c.2417-1758T>G	6:g.76593963T>G	23/34	.	new_splice_donor	pseudoexon_inclusion	Deafness, autosomal dominant 22 (606346)	vazDrago_2017
 7	117280015	C	T	ENSG00000001626	CFTR	ENST00000003084.6:c.3718-2477C>T	7:g.117280015C>T	22/26	6.375499651767313e-05	new_splice_donor	pseudoexon_inclusion	Cystic Fibrosis (2197700)	vazDrago_2017
 9	98226337	T	C	ENSG00000185920	PTCH1	ENST00000331920.6:c.2561-2057A>G	9:g.98226337T>C	15/23	.	new_splice_donor	pseudoexon_inclusion	Gorlin syndrome (109400)	vazDrago_2017
@@ -61,7 +61,7 @@ X	37657051	A	G	ENSG00000165168	CYBB	ENST00000378588.4:c.675-1157A>G	X:g.37657051
 X	66942551	A	G	ENSG00000169083	AR	ENST00000374690.3:c.2450-118A>G	X:g.66942551A>G	6/7	.	new_splice_donor	pseudoexon_inclusion	Complete androgen insensitivity syndrome (300068)	vazDrago_2017
 X	135737600	A	T	ENSG00000102245	CD40LG	ENST00000370629.2:c.347-915A>T	X:g.135737600A>T	3/4	.	new_splice_donor	pseudoexon_inclusion	Hyper IgM Syndrome, type 1 (308230)	vazDrago_2017
 X	154131652	G	A	ENSG00000185010	F8	ENST00000360256.4:c.5998+529C>T	X:g.154131652G>A	18/25	.	new_splice_donor	pseudoexon_inclusion	Hemophilia A (306700)	vazDrago_2017
-18	21132700	C	T	ENSG00000141458	NPC1	ENST00000269228.5:c.1554-1009G>A	18:g.21132700C>T	9/24	.	new_splice_donor	pseudoexon_inclusion	Niemann-Pick disease type C (257220)	vazDrago_2017
+18	21132700	C	T	ENSG00000141458	NPC1	ENST00000269228.5:c.1554-1009G>A	18:g.21132700C>T	9/24	.	change_sre	194bp_pseudoexon_inclusion	Niemann-Pick disease type C (257220)	vazDrago_2017
 12	108961426	G	C	ENSG00000136003	ISCU	ENST00000311893.9:c.418+382G>C	12:g.108961426G>C	4/4	.	strengthening_acceptor	pseudoexon_inclusion	Myopathy with lactic acidosis, hereditary (255125)	vazDrago_2017
 15	42697047	G	C	ENSG00000092529	CAPN3	ENST00000397163.3:c.1782+1072G>C	15:g.42697047G>C	14/23	.	strengthening_acceptor	pseudoexon_inclusion	Limb-girdle muscular dystrophy type 2A (253600)	vazDrago_2017
 X	154131240	C	T	ENSG00000185010	F8	ENST00000360256.4:c.5999-798G>A	X:g.154131240C>T	18/25	.	strengthening_acceptor	pseudoexon_inclusion	Hemophilia A (306700)	vazDrago_2017
@@ -70,7 +70,7 @@ X	153641699	G	A	ENSG00000102125	TAZ	ENST00000299328.5:c.284+110G>A	X:g.153641699
 1	216247476	T	C	ENSG00000042781	USH2A	ENST00000307340.3:c.5573-834A>G	1:g.216247476T>C	27/71	3.183900116709992e-05	strengthening_donor	pseudoexon_inclusion	Usher syndrome (276901)	vazDrago_2017
 4	155530122	T	A	ENSG00000171557	FGG	ENST00000336098.3:c.667-320A>T	4:g.155530122T>A	6/8	.	strengthening_donor	pseudoexon_inclusion	Afibrinogenemia (202400)	vazDrago_2017
 21	33039383	C	G	ENSG00000142168	SOD1	ENST00000270142.6:c.240-188C>G	21:g.33039383C>G	3/4	.	strengthening_donor	pseudoexon_inclusion	Amyotrophic lateral sclerosis 1 (105400)	vazDrago_2017
-22	30070689	T	A	ENSG00000186575	NF2	ENST00000338641.4:c.1341-136T>A	22:g.30070689T>A	12/15	.	strengthening_donor	pseudoexon_inclusion	Neurofibromatosis (101000)	vazDrago_2017
+22	30073952	T	A	ENSG00000186575	NF2	ENST00000338641.4:c.1447-233T>A	22:g.30073952T>A	13/15	.	strengthening_donor	pseudoexon_inclusion	Neurofibromatosis (101000)	vazDrago_2017
 X	148568762	T	C	ENSG00000010404	IDS	ENST00000340855.6:c.1007-133A>G	X:g.148568762T>C	7/8	.	strengthening_donor	pseudoexon_inclusion	Mucopolysaccharidosis (309900)	vazDrago_2017
 3	136003251	A	G	ENSG00000114054	PCCB	ENST00000469217.1:c.714+462A>G	3:g.136003251A>G	7/15	.	strengthening_donor	pseudoexon_inclusion	Propionic acidemia (606054)	vazDrago_2017
 5	112158423	A	T	ENSG00000134982	APC	ENST00000457016.1:c.1408+735A>T	5:g.112158423A>T	11/15	.	strengthening_donor	pseudoexon_inclusion	Familial Adenomatous Polyposis (175100)	vazDrago_2017

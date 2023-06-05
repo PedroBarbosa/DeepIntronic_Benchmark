@@ -4,10 +4,8 @@ CADD-Splice	CADDSplice_PHRED
 
 # Splicing
 SQUIRLS	SQUIRLS_SCORE
-HAL	HAL_DIFF
 SPIDEX	dpsi_zscore
 dbscSNV	ada_score,rf_score
-MaxEntScan	maxentscan_5,maxentscan_3
 SpliceAI	SpliceAI,SpliceAI_ind
 S-CAP	SCAP
 TraP	TraP
@@ -18,4 +16,5 @@ kipoiSplice4	kipoisplice_4
 CI-SpliceAI	CI-SpliceAI
 Pangolin	Pangolin
 SPiP	SPiP
+PDIVAS	PDIVAS
 AbSplice-DNA	AbSplice_DNA

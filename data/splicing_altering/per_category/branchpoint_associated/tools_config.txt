@@ -8,7 +8,6 @@ SPiP	SPiP	>	0.009	Splicing
 AbSplice-DNA	AbSplice_DNA	>	0.004	Splicing
 IntSplice2	IntSplice2
 SPIDEX	dpsi_zscore
-dbscSNV	ada_score,rf_score
 S-CAP	SCAP
 MMSplice	mmsplice_deltaPSI
 kipoiSplice4	kipoisplice_4
@@ -17,4 +16,4 @@ LaBranchoR	labranchoR
 regSNP-intron	regSNP_intron	>	0.56	Splicing	conspliceml_like
 SVM_BP_finder	SVM_BP_finder	>	0.136	Splicing
 BPP	BPP	>	0.0006	Splicing
-BPHunter	BPHunter	>	3	Splicing
+BPHunter	BPHunter	>	1	Splicing

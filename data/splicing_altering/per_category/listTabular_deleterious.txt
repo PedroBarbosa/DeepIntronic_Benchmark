@@ -1,7 +1,0 @@
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/moles_fernandez_2021/moles_fernandez_2021_splicing_altering_tabular.tsv
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/keegan_et_al_2022/keegan_2022_tabular.tsv
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/petersen_et_al_2022/petersen_2021_tabular.tsv
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/pbarbosa_and_vazDrago2017/vazDrago_tabular.tsv
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/pbarbosa_and_vazDrago2017/pbarbosa_tabular.tsv
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/tubeuf_et_al_2020/tubeuf_2020_tabular.tsv
-/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/jung_et_all_2021/jung_2021_tabular.tsv

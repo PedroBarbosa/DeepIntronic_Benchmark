@@ -1,0 +1,31 @@
+#Set of variants that are outside of any BP motif (YTNAY, YTNA, TNA, YNA). Variants at A - 1 positions were also excluded from the analysis 
+#Chromosome	Position_hg19	Position_hg38	Ref	Alt	Gene_ID	Gene_name	HGVSc	HGVSg	Major_group	Analysis	Distance_to_cryptic_splice_site	Affects_splicing	Functional_consequence	Data_Source
+1	150479279	150506803	C	T	ENSG00000143374	TARS2	ENST00000369064.3:c.2009-113C>T	1:g.150479279C>T	Branchpoint associated	Branchpoint associated	22	TRUE	intron_retention	jung_2021
+1	155033198	155060722	G	C	ENSG00000143537	ADAM15	ENST00000356955.2:c.2208-41G>C	1:g.155033198G>C	Branchpoint associated	Branchpoint associated	40	TRUE	exon_skipping	jung_2021
+1	201824234	201855106	C	A	ENSG00000198700	IPO9	ENST00000361565.4:c.912-18C>A	1:g.201824234C>A	Branchpoint associated	Branchpoint associated	17	TRUE	intron_retention	jung_2021
+10	22606770	22317841	G	A	ENSG00000269897	COMMD3-BMI1	ENST00000602390.1:c.140-43G>A	10:g.22606770G>A	Branchpoint associated	Branchpoint associated	42	TRUE	intron_retention	jung_2021
+11	380791	380791	C	G	ENSG00000182272	B4GALNT4	ENST00000329962.6:c.2870-34C>G	11:g.380791C>G	Branchpoint associated	Branchpoint associated	33	TRUE	intron_retention	jung_2021
+11	706569	706569	C	T	ENSG00000177106	EPS8L2	ENST00000533256.1:c.-203-108C>T	11:g.706569C>T	Branchpoint associated	Branchpoint associated	26	TRUE	intron_retention	jung_2021
+11	47354550	47332999	A	C	ENSG00000134571	MYBPC3	ENST00000545968.1:c.3331-26T>G	11:g.47354550A>C	Branchpoint associated	Branchpoint associated	25	TRUE	exon_extension&intron_retention	pbarbosa_2022
+13	49039315	48465179	A	C	ENSG00000139687	RB1	ENST00000267163.4:c.2326-26A>C	13:g.49039315A>C	Branchpoint associated	Branchpoint associated	25	TRUE	exon_skipping	leman_2020
+13	49039315	48465179	A	T	ENSG00000139687	RB1	ENST00000267163.4:c.2326-26A>T	13:g.49039315A>T	Branchpoint associated	Branchpoint associated	25	TRUE	exon_skipping	zhang_2022
+16	707711	657711	G	A	ENSG00000161996	WDR90	ENST00000293879.4:c.2474-51G>A	16:g.707711G>A	Branchpoint associated	Branchpoint associated	24	TRUE	intron_retention	jung_2021
+16	28843238	28831917	T	A	ENSG00000168488	ATXN2L	ENST00000395547.2:c.1322-288T>A	16:g.28843238T>A	Branchpoint associated	Branchpoint associated	23	TRUE	intron_retention	jung_2021
+16	67976511	67942608	C	G	ENSG00000213398	LCAT	ENST00000264005.5:c.524-21G>C	16:g.67976511C>G	Branchpoint associated	Branchpoint associated	20	TRUE	intron_retention	leman_2020
+17	40968103	42816085	T	C	ENSG00000126581	BECN1	ENST00000361523.4:c.684-31A>G	17:g.40968103T>C	Branchpoint associated	Branchpoint associated	30	TRUE	exon_skipping	jung_2021
+17	41199745	43047728	A	T	ENSG00000012048	BRCA1	ENST00000471181.2:c.5470-25T>A	17:g.41199745A>T	Branchpoint associated	Branchpoint associated	24	TRUE	exon_skipping	leman_2020
+17	41258568	43106551	A	C	ENSG00000012048	BRCA1	ENST00000471181.2:c.135-18T>G	17:g.41258568A>C	Branchpoint associated	Branchpoint associated	17	TRUE	exon_skipping	leman_2020
+17	41258577	43106560	A	T	ENSG00000012048	BRCA1	ENST00000471181.2:c.135-27T>A	17:g.41258577A>T	Branchpoint associated	Branchpoint associated	26	TRUE	exon_skipping	leman_2020
+17	73564520	75568439	C	T	ENSG00000073350	LLGL2	ENST00000392550.3:c.1037-37C>T	17:g.73564520C>T	Branchpoint associated	Branchpoint associated	36	TRUE	intron_retention	jung_2021
+17	76114040	78117959	C	T	ENSG00000141524	TMC6	ENST00000590602.1:c.1888-24G>A	17:g.76114040C>T	Branchpoint associated	Branchpoint associated	23	TRUE	intron_retention	jung_2021
+19	11622327	11511512	G	A	ENSG00000130159	ECSIT	ENST00000270517.7:c.738+1544C>T	19:g.11622327G>A	Branchpoint associated	Branchpoint associated	21	TRUE	intron_retention	jung_2021
+19	48639538	48136281	G	A	ENSG00000105486	LIG1	ENST00000263274.7:c.1332-156C>T	19:g.48639538G>A	Branchpoint associated	Branchpoint associated	26	TRUE	intron_retention	jung_2021
+2	109392160	108775704	A	G	ENSG00000153201	RANBP2	ENST00000283195.6:c.8293-28A>G	2:g.109392160A>G	Branchpoint associated	Branchpoint associated	27	TRUE	intron_retention	jung_2021
+2	183867776	183003048	T	C	ENSG00000061676	NCKAP1	ENST00000360982.2:c.331-18A>G	2:g.183867776T>C	Branchpoint associated	Branchpoint associated	17	TRUE	intron_retention	jung_2021
+4	47887704	47885687	T	G	ENSG00000170448	NFXL1	ENST00000507489.1:c.1665-30A>C	4:g.47887704T>G	Branchpoint associated	Branchpoint associated	29	TRUE	exon_skipping	jung_2021
+5	132160138	132824446	G	A	ENSG00000164403	SHROOM1	ENST00000378679.3:c.1242-27C>T	5:g.132160138G>A	Branchpoint associated	Branchpoint associated	26	TRUE	exon_skipping	jung_2021
+6	10726114	10725881	T	G	ENSG00000111843	TMEM14C	ENST00000541412.1:c.98-26T>G	6:g.10726114T>G	Branchpoint associated	Branchpoint associated	25	TRUE	exon_skipping	jung_2021
+8	145651486	144426103	G	A	ENSG00000160948	VPS28	ENST00000377348.2:c.67-40C>T	8:g.145651486G>A	Branchpoint associated	Branchpoint associated	39	TRUE	intron_retention	jung_2021
+9	139887764	136993312	G	C	ENSG00000148362	C9orf142	ENST00000371620.3:c.422-31G>C	9:g.139887764G>C	Branchpoint associated	Branchpoint associated	30	TRUE	exon_skipping	jung_2021
+X	32471959	32453842	C	A	ENSG00000198947	DMD	ENST00000357033.4:c.3603+820G>T	X:g.32471959C>A	Branchpoint associated	Branchpoint associated	18	TRUE	84bp_pseudoexon_inclusion	pbarbosa_2022
+X	46495111	46635676	T	A	ENSG00000065923	SLC9A7	ENST00000328306.4:c.1614-28A>T	X:g.46495111T>A	Branchpoint associated	Branchpoint associated	27	TRUE	intron_retention&exon_skipping	jung_2021

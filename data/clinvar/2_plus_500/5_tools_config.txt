@@ -1,0 +1,26 @@
+#Name	VCF_annotation_field	Directionality	Threshold	Scope	Processing_function
+#Conservation
+GERP	GERP
+phyloP	phyloP
+phastCons	phastCons
+SiPhy	SiPhy
+
+# Whole Genome
+LINSIGHT	linsight_g
+ReMM	ReMM
+FATHMM-MKL	fathmmMKL
+Eigen	Eigen
+CADD-Splice	CADDSplice_PHRED
+DANN	DANN
+CAPICE	CAPICE,CAPICE_ind
+
+# Splicing
+MaxEntScan	MES-SWA_donor_diff,MES-SWA_acceptor_diff
+SQUIRLS	SQUIRLS_SCORE
+SpliceAI	SpliceAI,SpliceAI_ind
+TraP	TraP
+ConSpliceML	ConSpliceML
+CI-SpliceAI	CI-SpliceAI
+Pangolin	Pangolin
+SPiP	SPiP
+AbSplice-DNA	AbSplice_DNA

@@ -3,7 +3,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(readr)
-setwd("/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_altering/per_study/keegan_et_al_2022/raw_data_processing")
+setwd("/Users/pbarbosa/git_repos/giga_science_reviews/data/splicing_altering/per_study/keegan_et_al_2022/raw_data_processing")
 
 data <- read_xlsx('0_supp_tables.xlsx', sheet = 1, skip= 1) %>% select(c(ID,
                                                                          Gene,
@@ -101,6 +101,9 @@ data <- data %>% filter(id != c("DMD-32-1b"))
 
 # Delete mutation that had a wrong allele 
 data <- data %>% filter(id != c("PSMC3-10-1"))
+
+# Delete splice site variants at IDS gene
+data <- data %>% filter(gene != c("IDS"))
 
 #############################
 ## Simplify mutation types ##

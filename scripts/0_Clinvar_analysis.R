@@ -8,10 +8,10 @@ library(ggplot2)
 library("RColorBrewer")
 
 # Read and subset data
-setwd("~/git_repos/paper_intronic_benchmark/")
-data <- read_csv('data/clinvar/clinvar_to_VETA_evaluation.vcf.gz.tsv')
+setwd("~/git_repos/giga_science_reviews/data/clinvar")
+data <- read_csv('2_plus_500/0_all_circularity.tsv')
 
-target_cols <- c('index','chr', 'pos', 'ref', 'alt', 'SYMBOL', 'HGVSc', 'CLNREVSTAT', 'location', 'intron_bin', 'intron_offset', 'which_ss', 'outcome')
+target_cols <- c('index','chr', 'pos', 'ref', 'alt', 'id', 'HGVSc', 'HGVSg', 'SYMBOL', 'Consequence', 'CLNREVSTAT', 'CLNSIG', 'location', 'intron_bin', 'intron_offset', 'which_ss', 'outcome')
 data <- data %>% dplyr::select(all_of(target_cols))
 data$intron_offset_log <- log(data$intron_offset, 10)
 data$intron_bin <- factor(data$intron_bin, levels=c("1-2","3-10","11-40", "41-200", "201-500", "501-1000", "1000+"))
@@ -22,81 +22,71 @@ data <- data %>%filter(CLNREVSTAT != "no_assertion_criteria_provided" &
                CLNREVSTAT != "no_interpretation_for_the_single_variant") %>% dplyr::select(-CLNREVSTAT)
 
 data %>% group_by(outcome, intron_bin) %>% tally()
+data <- data %>% filter(!is.na(intron_bin))
+
 #########################
 # All variants per bin ##
 #########################
-data %>% drop_na(intron_bin) %>%
-  ggplot() + 
-  geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
-  scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
-  scale_x_continuous(labels = scales::comma) +
-  facet_wrap(vars(intron_bin), scales='free_x')
-
-#################
-# All but 1-2 ###
-#################
-data %>% drop_na(intron_bin) %>%
-  filter(intron_bin != "1-2") %>%
-  ggplot() + 
-  geom_density(aes(x=intron_offset_log, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
-  scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
-  scale_x_continuous(labels = scales::comma) +
-  xlab('Log10(Intron offset)') 
-
-########################
-#### + 1000bp bin ######
-########################
-d <- data %>% filter(intron_bin == "1000+") %>% arrange(intron_offset)
-d %>% ggplot() + 
-  geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
-  scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
- # xlim(3, 7) + 
-  scale_x_continuous(labels = scales::comma) +
-  xlab('Log10(Intron offset)')
-
-########################
-#### Per ss per bin ####
-########################
-data %>% drop_na(intron_bin) %>%
-  filter(which_ss == "acceptor") %>%
-  ggplot() + 
-  geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
-  scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
-  scale_x_continuous(labels = scales::comma) +
-  facet_wrap(vars(intron_bin), scales='free_x')
-
-data %>% drop_na(intron_bin) %>%
-  filter(which_ss == "donor") %>%
-  ggplot() + 
-  geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
-  scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
-  scale_x_continuous(labels = scales::comma) +
-  facet_wrap(vars(intron_bin), scales='free_x')
-
-##############################
-### Nucleotide composition ###
-##############################
-# Need to fix alleles based on strand info
-# data$allele <- paste0(data$ref, ">", data$alt)
+# data %>% drop_na(intron_bin) %>%
+#   ggplot() + 
+#   geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
+#   scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
+#   scale_x_continuous(labels = scales::comma) +
+#   facet_wrap(vars(intron_bin), scales='free_x')
+# 
+# #################
+# # All but 1-2 ###
+# #################
+# data %>% drop_na(intron_bin) %>%
+#   filter(intron_bin != "1-2") %>%
+#   ggplot() + 
+#   geom_density(aes(x=intron_offset_log, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
+#   scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
+#   scale_x_continuous(labels = scales::comma) +
+#   xlab('Log10(Intron offset)') 
+# 
+# ########################
+# #### + 1000bp bin ######
+# ########################
+# d <- data %>% filter(intron_bin == "1000+") %>% arrange(intron_offset)
+# d %>% ggplot() + 
+#   geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
+#   scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
+#  # xlim(3, 7) + 
+#   scale_x_continuous(labels = scales::comma) +
+#   xlab('Log10(Intron offset)')
+# 
+# ########################
+# #### Per ss per bin ####
+# ########################
+# data %>% drop_na(intron_bin) %>%
+#   filter(which_ss == "acceptor") %>%
+#   ggplot() + 
+#   geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
+#   scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
+#   scale_x_continuous(labels = scales::comma) +
+#   facet_wrap(vars(intron_bin), scales='free_x')
 # 
 # data %>% drop_na(intron_bin) %>%
-#   ggplot(aes(x = outcome, fill = allele)) + 
-#   geom_bar(stat = "count", position = "fill", color = "black",size=0.5) +
-#   facet_wrap(~intron_bin) +
-#   scale_fill_brewer(palette = "Set3") +
-#   ylab('Fraction') +
-#   xlab('')
+#   filter(which_ss == "donor") %>%
+#   ggplot() + 
+#   geom_density(aes(x=intron_offset, y=after_stat(scaled), fill=outcome), alpha = 0.8, position = "identity") +
+#   scale_fill_manual(values = c("#00BFC4", "#F8766D")) +
+#   scale_x_continuous(labels = scales::comma) +
+#   facet_wrap(vars(intron_bin), scales='free_x')
+
   
 #############################
 ### 501-1000 and +1000bp ####
 ##############################
 # Check overlaps with other transcripts of the same gene
-plus_500 <- read_tsv("data/clinvar/2_plus_500/plus_500_all_consequences.tsv")
+plus_500 <- read_tsv("2_plus_500/2_plus_500_all_consequences.tsv")
 
 check_overlaps <- function(df, data_evaluated){
-  conseq_used <- df %>% filter(HGVSc %in% data_evaluated$HGVSc)
-  df <- df %>% filter(Gene %in% conseq_used$Gene)
 
+  conseq_used <- df %>% filter(HGVSc %in% data_evaluated$HGVSc)
+
+  #df <- df %>% filter(Gene %in% conseq_used$Gene)
   # No other tx, same conseq returned
   if (nrow(df) == 1) {
     return(conseq_used %>% add_column(MoreTx = NA))
@@ -112,9 +102,11 @@ check_overlaps <- function(df, data_evaluated){
       
       # Other intronic, check for smaller offset
       intron <- df %>% filter(!is.na(INTRON))
+     
       if (nrow(intron) >= 1){
         intron$offset <- unlist(lapply(intron$HGVSc, function(x) as.integer(sub("[A-Z>A-Z ]+", "", sub(".*[+-]", "", x)))))
         intron <- intron %>% slice(which.min(offset))
+
         return(conseq_used %>% add_column(MoreTx = intron$offset))
       }
       else{
@@ -125,6 +117,7 @@ check_overlaps <- function(df, data_evaluated){
 }
 
 out <- plus_500 %>% group_by(`#CHROM`, POS, REF, ALT) %>% group_modify(~check_overlaps(.x, data))
+
 out <- left_join(out, data %>% select(chr, pos, ref, alt, intron_bin, outcome), by=c("#CHROM" = "chr", "POS" = "pos", "REF" = "ref", "ALT" = "alt"))
 out$offset <- unlist(lapply(out$HGVSc, function(x) as.integer(sub("[A-Z>A-Z ]+", "", sub(".*[+-]", "", x)))))
 
@@ -226,26 +219,26 @@ ggpubr::ggarrange(gg1, gg2,
 ####################################################
 # To run VETA on each one separately
 
-write.table(one_conseq$HGVSc, file="data/clinvar/plus_500/hgvs_one_conseq.txt", row.names = F, col.names = F, quote = F)
-write.table(more_than_1_conseq_at_original_offset$HGVSc, file="data/clinvar/plus_500/hgvs_more_than_1_conseq_same_offset.txt", row.names = F, col.names = F, quote = F)
-write.table(exonic$HGVSc, file="data/clinvar/plus_500/hgvs_exonic.txt", row.names = F, col.names = F, quote = F)
-write.table(more_than_1_conseq_at_shorter_offset$HGVSc, file="data/clinvar/plus_500/hgvs_more_than_1_conseq_smaller_offset.txt", row.names = F, col.names = F, quote = F)
+write.table(one_conseq$HGVSc, file="2_plus_500/3_hgvs_one_conseq.txt", row.names = F, col.names = F, quote = F)
+write.table(more_than_1_conseq_at_original_offset$HGVSc, file="2_plus_500/3_hgvs_more_than_1_conseq_same_offset.txt", row.names = F, col.names = F, quote = F)
+write.table(exonic$HGVSc, file="2_plus_500/3_hgvs_exonic.txt", row.names = F, col.names = F, quote = F)
+write.table(more_than_1_conseq_at_shorter_offset$HGVSc, file="2_plus_500/3_hgvs_more_than_1_conseq_smaller_offset.txt", row.names = F, col.names = F, quote = F)
 
 
 ############################################
 ########### Upload VETA results ############
 ############################################
 
-out_exonic <- read_tsv("out/out_clinvar_plus_500_exonic/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_exonic <- read_tsv("../../out/out_clinvar_plus_500_exonic/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_exonic$analysis <- "Exonic"
 
-out_1_conseq <- read_tsv("out/out_clinvar_plus_500_intronic_1_conseq/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_1_conseq <- read_tsv("../../out/out_clinvar_plus_500_intronic_1_conseq/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_1_conseq$analysis <- "No other transcript"
 
-out_more_1_same_offset <- read_tsv("out/out_clinvar_plus_500_intronic_moreThan1Tx_same_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_more_1_same_offset <- read_tsv("../../out/out_clinvar_plus_500_intronic_moreThan1Tx_same_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_more_1_same_offset$analysis <- "> 1 transcript (same offset)"
 
-out_more_1_smaller_offset <- read_tsv("out/out_clinvar_plus_500_intronic_moreThan1Tx_smaller_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
+out_more_1_smaller_offset <- read_tsv("../../out/out_clinvar_plus_500_intronic_moreThan1Tx_smaller_offset/1s_l/tools_benchmark/snps/results_tsv/statistics_snps_all.tsv")
 out_more_1_smaller_offset$analysis <- "> 1 transcript (smaller offset)"
 
 outt <- bind_rows(list(out_exonic, out_1_conseq, out_more_1_same_offset, out_more_1_smaller_offset)) %>% select(tool, weighted_F1, average_precision, fraction_nan, analysis)
@@ -255,20 +248,20 @@ outt$analysis <- factor(outt$analysis, levels = rev(c("No other transcript",
                                                       "Exonic")))
 
 # Remove splicing tools with range limits 
-outt <- outt %>% filter(!tool %in% c("HAL", "SPIDEX", "dbscSNV", "S-CAP", "kipoiSplice4", "MLCsplice", "MMSplice", "MaxEntScan"))
+outt <- outt %>% filter(!tool %in% c("HAL", "SPIDEX", "dbscSNV", "S-CAP", "kipoiSplice4", "MLCsplice", "MMSplice"))
 
 ggplot() +  
   geom_boxplot(data = outt, aes(y=analysis, x=weighted_F1), outlier.shape = NA, alpha = 0.7, fill = 'antiquewhite2') +
-  geom_point(data= outt %>% filter(weighted_F1 < 0.65), 
+  geom_point(data= outt %>% filter(weighted_F1 < 0.6), 
              position = position_dodge(width=1), 
              size = 1,
              aes(y=analysis, x=weighted_F1)) +
   
-  geom_point(data= outt %>% filter(weighted_F1 >= 0.65), 
+  geom_point(data= outt %>% filter(weighted_F1 >= 0.6), 
              size = 4,
              position = position_jitter(width = 0, height = 0.2), 
              aes(y=analysis, x=weighted_F1, colour=tool)) +
-  geom_vline(xintercept = 0.65, linetype='dashed') +
+  geom_vline(xintercept = 0.6, linetype='dashed') +
   scale_color_manual(values = brewer.pal(12, "Set3")) +
   theme_bw() + 
   xlim(0, 1) +
@@ -291,10 +284,10 @@ ggplot() +
 ###################################################
 ### Compare last two bins with previous results ###
 ###################################################
-out_500_old <- read_tsv('out/out_clinvar_all/1s_l/intron_analysis/results_tsv/statistics_all_501-1000.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(old = weighted_F1)
-out_1000_old <- read_tsv('out/out_clinvar_all/1s_l/intron_analysis/results_tsv/statistics_all_1000+.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(old = weighted_F1)
-out_500_new <- read_tsv('out/out_clinvar_excluding_exonic_and_closer_to_ss_all_tools/1s_l/intron_analysis/results_tsv/statistics_all_501-1000.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(new = weighted_F1)
-out_1000_new <- read_tsv('out/out_clinvar_excluding_exonic_and_closer_to_ss_all_tools/1s_l/intron_analysis/results_tsv/statistics_all_1000+.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(new = weighted_F1)
+out_500_old <- read_tsv('../../out/out_clinvar_all_tools/1s_l/intron_analysis/results_tsv/statistics_all_501-1000.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(old = weighted_F1)
+out_1000_old <- read_tsv('../../out/out_clinvar_all_tools/1s_l/intron_analysis/results_tsv/statistics_all_1000+.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(old = weighted_F1)
+out_500_new <- read_tsv('../../out/out_clinvar_excluding_exonic_and_closer_to_ss_all_tools/1s_l/intron_analysis/results_tsv/statistics_all_501-1000.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(new = weighted_F1)
+out_1000_new <- read_tsv('../../out/out_clinvar_excluding_exonic_and_closer_to_ss_all_tools/1s_l/intron_analysis/results_tsv/statistics_all_1000+.tsv') %>% select(tool, weighted_F1) %>% dplyr::rename(new = weighted_F1)
 
 out_500 <- left_join(out_500_old, out_500_new)
 out_500$bin <- "500-1000"
@@ -303,7 +296,7 @@ out_1000 <- left_join(out_1000_old, out_1000_new)
 out_1000$bin <- "1000+"
 
 
-splicing_tools_to_remove <- c("HAL", "SPIDEX", "dbscSNV", "S-CAP", "kipoiSplice4", "MLCsplice", "MMSplice", "MaxEntScan")
+splicing_tools_to_remove <- c("HAL", "SPIDEX", "dbscSNV", "S-CAP", "kipoiSplice4", "MLCsplice", "MMSplice")
 to_plot <- bind_rows(out_500, out_1000) %>% filter(!tool %in% splicing_tools_to_remove)
 to_plot$difference <- to_plot$new - to_plot$old
 to_plot <- to_plot %>% arrange(-difference)

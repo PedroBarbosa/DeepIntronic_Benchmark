@@ -1,0 +1,1 @@
+SpliceAI	SpliceAI,SpliceAI_ind	>	0.05	Splicing

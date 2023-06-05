@@ -9,7 +9,7 @@ library(stringr)
 library(ggbump)
 library(forcats)
 library(broom)
-setwd("~/git_repos/paper_intronic_benchmark/")
+setwd("~/git_repos/giga_science_reviews/")
 
 list_files <- list(branchpoint = 'data/splicing_altering/per_category/branchpoint_associated/statistics_all_types_all.tsv',
                    pe_new_donor = 'data/splicing_altering/per_category/pseudoexon_activation/new_donor/statistics_all_types_all.tsv',
@@ -29,6 +29,11 @@ df <- map2_df(list_files,
                 select(c('tool', 'norm_mcc', 'weighted_norm_mcc', 'weighted_F1', 'total_p', 'total_n',
                          'tp', 'fp', 'tn', 'fn',
                          'fraction_nan', 'weighted_accuracy', 'auROC', 'average_precision', 'analysis'))) 
+
+# Remove AP score from tools with more than 50% of missing data since ROC curves are not drawn in such cases
+df$average_precision <- ifelse(df$tool == "MLCsplice" & df$analysis == "branchpoint", NA, df$average_precision)
+df$average_precision <- ifelse(df$tool == "IntSplice2" & df$analysis == "branchpoint", NA, df$average_precision)
+
 to_heatmap <- df
 df <- df %>% drop_na()
 
@@ -79,7 +84,7 @@ ggplot(df %>% filter(analysis != "branchpoint"), aes(x=group, y=average_precisio
         axis.title.y = element_text(size=13),
         axis.line = element_line(colour = "black"),
         panel.background = element_blank(),
-        strip.text.x = element_text(size = 10, colour = "black"),
+        strip.text.x = element_text(size = 12, colour = "black"),
         plot.title = element_text(size=16, hjust = 0.5),
         legend.text = element_text(size=13)) +
   ylim(0.2, 1) +
@@ -111,6 +116,9 @@ fisher_test <- function(data){
   }
 }
 
+color_df <- data.frame(colors = c("coral4", "aquamarine4", "darkslateblue", "darkgrey"),
+                       region = c("Acceptor associated", "Donor downstream", "Exonic-like", "New splice donor"))
+
 fisher_df <- bind_rows(df %>% group_by(tool, region) %>% 
   group_map(~fisher_test(.x), .keep = T))
 pval_corr <- fisher_df %>% filter(!is.na(p.value))
@@ -120,8 +128,6 @@ fisher_df <- left_join(fisher_df, pval_corr)%>% left_join(color_df)
 table(pval_corr$p.value < 0.05)
 table(pval_corr$p.adj < 0.05)
 
-color_df <- data.frame(colors = c("coral4", "aquamarine4", "darkslateblue", "darkgrey"),
-                       region = c("Acceptor associated", "Donor downstream", "Exonic-like", "New splice donor"))
 
 df <- left_join(df, fisher_df %>% select(tool, region, p.value, p.adj, colors))
 
@@ -243,8 +249,8 @@ ggplot(all, aes(x=label, y=average_precision, group=tool, color =tool)) +
   theme_bw() +
   theme(legend.title=element_blank(),
         legend.position = c(0.5, 0.6),
-        axis.text.y = element_text(size=13),
-        axis.text.x = element_text(size=13),
+        axis.text.y = element_text(size=11),
+        axis.text.x = element_text(size=11),
         axis.title.y = element_text(size=15),
         strip.text.x = element_text(size = 17),
         axis.line = element_line(colour = "black"),
@@ -290,9 +296,11 @@ out <- lapply(seq_along(list_dfs), fill_missing_analysis) %>% bind_rows() %>%
 
 # Change MLCsplice and dbscSNV. They were run, but had all predictions missed, b
 # eing wrongly assigned to the "no run for variant region" class
-out <-out %>% mutate(average_precision=case_when(tool=="MLCsplice" & analysis == "pe_new_donor" ~ 0.19,
-                                   tool=="dbscSNV" & analysis %in% c("pe_new_donor", "partial_ir_new_donor") ~ 0.19,
-                                   TRUE ~ average_precision))
+# out <-out %>% mutate(average_precision=case_when(tool=="MLCsplice" & analysis == "pe_new_donor" ~ 0.19,
+#                                    tool=="dbscSNV" & analysis %in% c("pe_new_donor", "partial_ir_new_donor") ~ 0.19,
+#                                    TRUE ~ average_precision))
+out <-out %>% mutate(average_precision=case_when(tool=="IntSplice2" & analysis %in% c("partial_ir_acceptor_associated", "pe_acceptor_associated") ~ 0.19,
+                                                 TRUE ~ average_precision))
 
 out <-
   out %>% mutate(average_precision_bins = cut(
@@ -316,8 +324,8 @@ out <-
 
 final_heat <- out %>% select(-auROC, -average_precision) %>% pivot_wider(names_from = analysis, values_from = average_precision_bins) %>% column_to_rownames(var = 'tool')
 final_heat <- out %>% select(-auROC, -average_precision_bins) %>% pivot_wider(names_from = analysis, values_from = average_precision) %>% column_to_rownames(var = 'tool')
-tool_order <- c("SpliceAI", "Pangolin", "CI-SpliceAI", "ConSpliceML", "AbSplice-DNA", "SPiP", "SQUIRLS", "TraP", "regSNP-intron", "MMSplice", "SPIDEX", "dbscSNV",
-                "kipoiSplice4", "MLCsplice", "HAL", "LaBranchoR", "BPP", "SVM_BP_finder", "BPHunter", "IntSplice2", "SpliceRover", "Spliceator", "DSSP", "HEXplorer", "ESRseq")
+tool_order <- c("SpliceAI", "Pangolin", "CI-SpliceAI", "ConSpliceML", "AbSplice-DNA", "PDIVAS", "SPiP", "SQUIRLS", "TraP", "MMSplice", "SPIDEX", 
+                "kipoiSplice4", "MLCsplice","LaBranchoR", "BPHunter", "BPP", "SVM_BP_finder", "IntSplice2", "MaxEntScan", "SpliceRover", "Spliceator", "DSSP", "HAL", "HEXplorer", "ESRseq", "ESEfinder")
 col_order <- c("branchpoint", "pe_acceptor_associated", "partial_ir_acceptor_associated", "pe_sre",
                "partial_ir_sre", "pe_new_donor", "partial_ir_new_donor", "pe_donor_downstream", 
                "partial_ir_donor_downstream")
@@ -352,6 +360,8 @@ col_fun = colorRamp2(c(0.18, 0.19, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
 #ccc <- carto.pal(pal1 = "blue.pal" ,n1 = 20, middle = TRUE, transparency = TRUE)[c(1,3,5,7,9,11,13,15,18)] 
 # col_fun = colorRamp2(c(0.18, 0.19, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
 #                      c(c("white", "#FFE8EA"), rev(ccc)))
+
+region_annot <- c("Branchpoint associated", rep(c("Pseudoexon activation", "Partial intron retention"), times=4))
 
 htmp <- Heatmap(
   final_heat,
@@ -404,4 +414,4 @@ lgd = Legend(
   border = "black")
 
 draw(htmp,  merge_legend=T, annotation_legend_list = list(lgd))
-
+  

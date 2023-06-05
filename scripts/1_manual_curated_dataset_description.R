@@ -7,7 +7,7 @@ library(tibble)
 library(stringr)
 library(ggpubr)
 
-setwd("/Users/pbarbosa/git_repos/paper_intronic_benchmark/data/splicing_pathogenic_manual_curation/1_dataset_description")
+setwd("/Users/pbarbosa/git_repos/giga_science_reviews/data/splicing_pathogenic_manual_curation/1_dataset_description")
 data <- read_tsv('manual_curated.tsv')
 data <- data %>% filter(Source == "pbarbosa_2022")
 
@@ -61,14 +61,28 @@ ggplot(all) +
 ###################
 ## AF histogram ###
 ###################
-data <- data %>% mutate(gnomADg_AF = as.numeric(gnomADg_AF)) %>% 
-  mutate(gnomADg_AF = ifelse(is.na(gnomADg_AF), 0, gnomADg_AF))
-
-ggplot(data, aes(gnomADg_AF)) +
-  geom_histogram(bins = 200, fill='coral4', alpha=0.8) +
+# data_af <- data %>% mutate(gnomADg_AF = as.numeric(gnomADg_AF)) %>% 
+#   mutate(gnomADg_AF = ifelse(is.na(gnomADg_AF), 0, gnomADg_AF))
+data_af <- data %>% dplyr::select(gnomADg_AF) %>% mutate(gnomADg_AF = as.numeric(gnomADg_AF)) %>% 
+  mutate(gnomADg_AF = ifelse(is.na(gnomADg_AF), 0.00001, gnomADg_AF)) %>% 
+  mutate(gnomADg_AF = -log10(gnomADg_AF))
+  
+ggplot(data_af, aes(gnomADg_AF)) +
+  geom_histogram(bins = 100, fill='coral4', alpha=0.8) +
   #geom_density(fill='coral4', alpha=0.7) +
-  xlab('gnomAD v2.1 frequency') +
-  ylab('Count')
+  xlab('-log10 (gnomAD v2.1 frequency)') +
+  ylab('Count') +
+  theme_bw() +
+  theme(legend.title=element_blank(),
+        axis.text.y = element_text(size=11),
+        axis.text.x = element_text(size=11),
+        axis.title.x = element_text(size=12),
+        axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  ylim(0, 150)
   
 ##################
 ###  Overlaps  ###
@@ -77,7 +91,7 @@ data <- read_tsv("overlaps.tsv")
 counts <- data %>% group_by(source) %>% dplyr::summarize(n=n())
 
 our_curation = counts %>% filter(source == "pbarbosa") %>% pull(n)
-in_clinvar = counts %>% filter(source == "in_clinvar") %>% pull(n)
+in_clinvar = counts %>%  filter(source == "in_clinvar" | source == "in_clinvar_wrong_interpt") %>% summarize(sum=sum(n)) %>% pull(sum)
 in_clinvar_and_patho_or_likely = in_clinvar - counts %>% filter(source == "in_clinvar_wrong_interpt") %>% pull(n)
 in_gnomad = counts %>% filter(source == "in_gnomad") %>% pull(n)
 
