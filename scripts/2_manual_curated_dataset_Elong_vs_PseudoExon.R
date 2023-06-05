@@ -7,7 +7,7 @@ library(tibble)
 library(stringr)
 library(ggpubr)
 
-setwd("~/git_repos/giga_science_reviews/data/splicing_pathogenic_manual_curation/1_dataset_description/")
+setwd("~/git_repos/DeepIntronic_Benchmark/data/splicing_pathogenic_manual_curation/1_dataset_description/")
 
 data_pathogenic <- read_tsv('manual_curated.tsv')
 data_benign <- read_tsv('benign.tsv')

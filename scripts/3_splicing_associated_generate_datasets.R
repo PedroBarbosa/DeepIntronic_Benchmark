@@ -4,8 +4,8 @@ library(tidyr)
 library(purrr)
 library(stringr)
 library(readxl)
-setwd("~/git_repos/giga_science_reviews/scripts")
 
+setwd("~/git_repos/DeepIntronic_Benchmark/scripts")
 #########################
 ### Splicing altering ###
 #########################

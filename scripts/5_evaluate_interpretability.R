@@ -6,7 +6,7 @@ library(tidyr)
 library(stringr)
 library(dutchmasters)
 
-setwd("~/git_repos/giga_science_reviews/scripts")
+setwd("~/git_repos/DeepIntronic_Benchmark/scripts")
 
 # Manual curation files
 curation <- read_tsv('../data/splicing_pathogenic_manual_curation/1_dataset_description/manual_curated.tsv') %>% mutate(`#CHROM` = as.character(`#CHROM`),

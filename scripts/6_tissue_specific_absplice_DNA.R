@@ -7,7 +7,7 @@ library(tibble)
 library(stringr)
 library(dutchmasters)
 
-setwd("~/git_repos/giga_science_reviews/scripts")
+setwd("~/git_repos/DeepIntronic_Benchmark/scripts")
 tissues <- c("Adipose_Subcutaneous",
                  "Adipose_Visceral_Omentum",
                  "Adrenal_Gland",

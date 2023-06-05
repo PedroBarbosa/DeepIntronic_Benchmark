@@ -8,7 +8,7 @@ library(ggplot2)
 library("RColorBrewer")
 
 # Read and subset data
-setwd("~/git_repos/giga_science_reviews/data/clinvar")
+setwd("~/git_repos/DeepIntronic_Benchmark/data/clinvar")
 data <- read_csv('2_plus_500/0_all_circularity.tsv')
 
 target_cols <- c('index','chr', 'pos', 'ref', 'alt', 'id', 'HGVSc', 'HGVSg', 'SYMBOL', 'Consequence', 'CLNREVSTAT', 'CLNSIG', 'location', 'intron_bin', 'intron_offset', 'which_ss', 'outcome')

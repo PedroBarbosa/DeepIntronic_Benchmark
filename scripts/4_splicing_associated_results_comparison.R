@@ -9,7 +9,7 @@ library(stringr)
 library(ggbump)
 library(forcats)
 library(broom)
-setwd("~/git_repos/giga_science_reviews/")
+setwd("~/git_repos/DeepIntronic_Benchmark/")
 
 list_files <- list(branchpoint = 'data/splicing_altering/per_category/branchpoint_associated/statistics_all_types_all.tsv',
                    pe_new_donor = 'data/splicing_altering/per_category/pseudoexon_activation/new_donor/statistics_all_types_all.tsv',
