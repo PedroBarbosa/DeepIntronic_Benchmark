@@ -308,7 +308,7 @@ out <-
     breaks = c(-2.1,-1.1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
     labels = c(
       "Too many missing predictions",
-      "Not run for variant region",
+      "Did not run for variant region",
       "> 0",
       "> 0.1",
       "> 0.2",
@@ -408,7 +408,7 @@ htmp <- Heatmap(
 )
 
 lgd = Legend(
-  labels = c("Not run for variant region", "Too many missing predictions"), 
+  labels = c("Did not run for variant region", "Too many missing predictions"), 
   legend_gp = gpar(fill = c("white", "#FFE8EA")),
   title = "", 
   border = "black")
