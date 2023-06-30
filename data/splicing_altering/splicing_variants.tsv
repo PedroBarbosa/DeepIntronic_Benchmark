@@ -621,7 +621,6 @@ X	154249118	155020843	T	C	ENSG00000185010	F8	ENST00000360256.4:c.143+1567A>G	X:g
 4	155527225	154606073	T	C	ENSG00000171557	FGG	ENST00000336098.3:c.1129+632A>G	4:g.155527225T>C	Pseudoexon activation	New splice donor	0	TRUE	pseudoexon_inclusion	keegan_2022
 4	155530122	154608970	T	A	ENSG00000171557	FGG	ENST00000336098.3:c.667-320A>T	4:g.155530122T>A	Pseudoexon activation	Donor downstream	5	TRUE	pseudoexon_inclusion	vazDrago_2017
 1	156643796	156674004	C	A	ENSG00000132688	NES	ENST00000368223.3:c.909-477G>T	1:g.156643796C>A	Pseudoexon activation	Exonic-like	16	TRUE	pseudoexon_inclusion&intron_retention	jung_2021
-1	156842627	156872835	C	T	ENSG00000198400	NTRK1	ENST00000524377.1:c.851-798C>T	1:g.156842627C>T	Pseudoexon activation	Exonic-like	4	TRUE	pseudoexon_inclusion	keegan_2022
 1	156842631	156872839	C	G	ENSG00000198400	NTRK1	ENST00000524377.1:c.851-794C>G	1:g.156842631C>G	Pseudoexon activation	New splice donor	0	TRUE	pseudoexon_inclusion	keegan_2022
 1	156843392	156873600	T	A	ENSG00000198400	NTRK1	ENST00000524377.1:c.851-33T>A	1:g.156843392T>A	Branchpoint associated	Branchpoint associated	32	TRUE	partial_intron_retention	leman_2020
 3	158367854	158650065	G	A	ENSG00000168827	GFM1	ENST00000486715.1:c.689+908G>A	3:g.158367854G>A	Pseudoexon activation	Donor downstream	3	TRUE	57bp_pseudoexon_inclusion (non canonical isoform activation)	pbarbosa_2022
