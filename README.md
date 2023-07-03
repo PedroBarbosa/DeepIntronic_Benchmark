@@ -21,3 +21,6 @@ cd DeepIntronic_Benchmark
 ```
 
 This will create a Docker image with all software (and exact versions) that will run the `intronic_benchmark.ipynb` jupyter notebook. All results will be saved in the `out` folder.
+
+## Contact
+pbarbosa@lasige.di.fc.ul.pt
