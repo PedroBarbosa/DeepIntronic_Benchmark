@@ -1,4 +1,4 @@
-tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	average_precision
+tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	auPRC
 HAL	1.0	1.0	0.375	0.577	0.7885	0.2	3	0	40	5	83	58	8	40	91	98	0.545	0.139	189	43	141	0.746031746031746	0.25396825396825395	0.8958333333333334	0.228		
 SpliceRover	0.9375	0.9782608695652174	0.3333333333333333	0.409	0.7045	0.678	30	2	90	60	1	6	90	92	91	98	0.492	0.474	189	120	7	0.037037037037037035	0.9629629629629629	0.6593406593406593	0.635	0.7945652173913044	0.8048219766211063
 Spliceator	0.8	0.9101123595505618	0.35555555555555557	0.319	0.6595	0.625	32	8	81	58	1	9	90	89	91	98	0.492	0.466	189	113	10	0.05291005291005291	0.9470899470899471	0.6312849162011173	0.598	0.7765293383270911	0.7464398587495175

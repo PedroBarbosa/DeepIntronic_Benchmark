@@ -1,4 +1,4 @@
-tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	average_precision
+tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	auPRC
 MaxEntScan	0.6388888888888888	0.7796610169491526	0.5	0.292	0.646	0.646	23	13	46	23	0	0	46	59	46	59	0.561	0.561	105	69	0	0.0	1.0	0.6571428571428571	0.657	0.7302873986735445	0.619756234706735
 SpliceRover	0.6842105263157895	0.8947368421052632	0.29545454545454547	0.241	0.6205	0.597	13	6	51	31	2	2	44	57	46	59	0.413	0.397	105	64	4	0.0380952380952381	0.9619047619047619	0.6336633663366337	0.61	0.6614832535885168	0.6338658369838691
 Spliceator	0.4	0.9464285714285714	0.045454545454545456	-0.018	0.491	0.468	2	3	53	42	2	3	44	56	46	59	0.082	0.078	105	55	5	0.047619047619047616	0.9523809523809523	0.55	0.524	0.5349025974025974	0.4658845402691936

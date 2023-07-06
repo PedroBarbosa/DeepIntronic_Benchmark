@@ -1,4 +1,4 @@
-tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	average_precision
+tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	auPRC
 CADD-Splice	0.6923076923076923	0.5675675675675675	0.972972972972973	0.591	0.7955	0.796	36	16	21	1	0	0	37	37	37	37	0.809	0.809	74	57	0	0.0	1.0	0.7702702702702703	0.77	0.858290723155588	0.7951332244802808
 SQUIRLS	1.0	1.0	0.7027027027027027	0.736	0.868	0.868	26	0	37	11	0	0	37	37	37	37	0.825	0.825	74	63	0	0.0	1.0	0.8513513513513513	0.851	0.918918918918919	0.9201088508728243
 SpliceAI	0.8974358974358975	0.8888888888888888	0.9459459459459459	0.837	0.9185	0.906	35	4	32	2	0	1	37	36	37	37	0.921	0.909	74	67	1	0.013513513513513514	0.9864864864864865	0.9178082191780822	0.905	0.9564564564564564	0.9410548980761306

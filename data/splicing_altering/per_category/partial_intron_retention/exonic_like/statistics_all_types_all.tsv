@@ -1,4 +1,4 @@
-tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	average_precision
+tool	precision	specificity	sensitivity	mcc	norm_mcc	weighted_norm_mcc	tp	fp	tn	fn	mp	mn	scored_p	scored_n	total_p	total_n	F1	weighted_F1	total	correct	nan	fraction_nan	coverage	accuracy	weighted_accuracy	auROC	auPRC
 AbSplice-DNA	0.5789473684210527	0.7647058823529411	0.3793103448275862	0.156	0.578	0.543	11	8	26	18	3	1	29	34	32	35	0.458	0.431	67	37	4	0.05970149253731343	0.9402985074626866	0.5873015873015873	0.552	0.5649087221095335	0.5543429328467824
 CI-SpliceAI	0.5135135135135135	0.4857142857142857	0.59375	0.08	0.54	0.54	19	18	17	13	0	0	32	35	32	35	0.551	0.551	67	36	0	0.0	1.0	0.5373134328358209	0.537	0.5223214285714286	0.5230518172831928
 ConSpliceML	0.5384615384615384	0.5714285714285714	0.5	0.072	0.536	0.448	14	12	16	14	4	7	28	28	32	35	0.519	0.433	67	30	11	0.16417910447761194	0.835820895522388	0.5357142857142857	0.448	0.5395408163265306	0.551486172870216
