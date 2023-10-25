@@ -1,7 +1,7 @@
 # Benchmarking computational methods to predict deep intronic variation
 
-Repository with the data and code to reproduce the evaluation of computational methods to predict functional intronic variation described in the preprint:
-https://www.biorxiv.org/content/10.1101/2023.02.17.528928v1
+Repository with the data and code to reproduce the evaluation of computational methods to predict functional intronic variation described in the paper:
+https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad085/7329463
 
 ## Datasets
 `data` folder contains all the datasets in the hg19 version used for all comparisons. VCF files are annotated with predictions from the tools included in the study.\
@@ -23,4 +23,4 @@ cd DeepIntronic_Benchmark
 This will create a Docker image with all software (and exact versions) that will run the `intronic_benchmark.ipynb` jupyter notebook. All results will be saved in the `out` folder.
 
 ## Contact
-pbarbosa@lasige.di.fc.ul.pt
+psbarbosa@ciencias.ulisboa.pt
