@@ -1,3 +1,5 @@
+[![DOI:10.5524/102423](http://img.shields.io/badge/DOI-10.5524/102423-46923C.svg)](http://dx.doi.org/10.5524/102423)
+
 # Benchmarking computational methods to predict deep intronic variation
 
 Repository with the data and code to reproduce the evaluation of computational methods to predict functional intronic variation described in the paper:
